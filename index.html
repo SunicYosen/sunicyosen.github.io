@@ -55,6 +55,8 @@ css: ["index.css"]
         </a>
       </li>
 
+
+
       {% if paginator.total_pages <= 5 %}
         {% if paginator.page == 1 %}
           <li class="active grey darken-2">
@@ -75,11 +77,11 @@ css: ["index.css"]
         {% endfor %}
 
       {% else %}
-        {% if paginator.total_pages == 0 %}
+        {% if paginator.total_pages == nil %}
           <li class="active grey darken-2">
             <a href="#!">0</a>
           </li>
-          
+
         {% else %}
           {% if paginator.page <= 3 %}
             {% if paginator.page == 1 %}
