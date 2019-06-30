@@ -30,6 +30,16 @@ css: ["index.css"]
   
   <div class="col s12 center-align">
     <ul class="pagination">
+
+      <li class="{% unless paginator.previous_page %}disabled{% else %}waves-effect{% endunless %}">
+        {% if paginator.page == 1 %}
+        <a href="#!">
+        {% else %}
+        <a href="{{site.baseurl}}/">
+        {% endif %}
+        <i class="material-icons">first_page</i>
+        </a>
+      </li>
       
       <li class="{% unless paginator.previous_page %}disabled{% else %}waves-effect{% endunless %}">
         {% if paginator.previous_page %}
@@ -45,22 +55,71 @@ css: ["index.css"]
         </a>
       </li>
 
-      {% if paginator.page == 1 %}
-      <li class="active grey darken-2">
-        <a href="#!">1</a>
-      {% else %}
-      <li class="waves-effect">
-        <a href="{{site.baseurl}}/">1</a>
-      {% endif %}
-      </li>
+      {% if paginator.total_pages <= 5 %}
+        {% if paginator.page == 1 %}
+          <li class="active grey darken-2">
+            <a href="#!">1</a>
+          </li>
+        {% else %}
+          <li class="waves-effect">
+            <a href="{{site.baseurl}}/">1</a>
+          </li>
+        {% endif %}
 
-      {% for count in (2..paginator.total_pages) %}
-      {% if count == paginator.page %}
-      <li class="active grey darken-2"><a href="#!">{{count}}</a></li>
+        {% for count in (2..paginator.total_pages) %}
+          {% if count == paginator.page %}
+            <li class="active grey darken-2"><a href="#!">{{count}}</a></li>
+          {% else %}
+            <li class="waves-effect"><a href="{{site.baseurl}}/page{{count}}">{{count}}</a></li>
+          {% endif %}
+        {% endfor %}
+
       {% else %}
-      <li class="waves-effect"><a href="{{site.baseurl}}/page{{count}}">{{count}}</a></li>
+        {% if paginator.page <= 3 %}
+          {% if paginator.page == 1 %}
+            <li class="active grey darken-2">
+              <a href="#!">1</a>
+            </li>
+          {% else %}
+            <li class="waves-effect">
+              <a href="{{site.baseurl}}/">1</a>
+            </li>
+          {% endif %}
+            
+          
+          {% for count in (2..5) %}
+            {% if count == paginator.page %}
+              <li class="active grey darken-2"><a href="#!">{{count}}</a></li>
+            {% else %}
+              <li class="waves-effect"><a href="{{site.baseurl}}/page{{count}}">{{count}}</a></li>
+            {% endif %}
+          {% endfor %}
+          
+        {% else %}
+          {% assign total_pages_l2 = paginator.total_pages|minus:2 %}
+          {% if paginator.page >= total_pages_l2 %}
+            {% assign total_pages_l4 = paginator.total_pages|minus:4 %}
+            {% for count in (total_pages_l4..paginator.total_pages) %}
+              {% if count == paginator.page %}
+                <li class="active grey darken-2"><a href="#!">{{count}}</a></li>
+              {% else %}
+                <li class="waves-effect"><a href="{{site.baseurl}}/page{{count}}">{{count}}</a></li>
+              {% endif %}
+            {% endfor %}
+          
+            {% else %}
+              {% assign page_l2 = paginator.page|minus:2 %}
+              {% assign page_h2 = paginator.page|plus:2 %}
+              {% for count in (page_l2..page_h2) %}
+                {% if count == paginator.page %}
+                  <li class="active grey darken-2"><a href="#!">{{count}}</a></li>
+                {% else %}
+                  <li class="waves-effect"><a href="{{site.baseurl}}/page{{count}}">{{count}}</a></li>
+                {% endif %}
+              {% endfor %}
+        {% endif %}
       {% endif %}
-      {% endfor %}
+    {% endif %}
 
       <li class="{% unless paginator.next_page %}disabled{% else %}waves-effect{% endunless %}">
         {% if paginator.next_page %}
@@ -69,6 +128,16 @@ css: ["index.css"]
         <a href="#!">
         {% endif %}
           <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+
+      <li class="{% unless paginator.next_page %}disabled{% else %}waves-effect{% endunless %}">
+        {% if paginator.page == paginator.total_pages %}
+          <a href="#!">
+        {% else %}
+          <a href="{{site.baseurl}}/page{{paginator.total_pages}}">
+        {% endif %}
+            <i class="material-icons">last_page</i>
         </a>
       </li>
 
