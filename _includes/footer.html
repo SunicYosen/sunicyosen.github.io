@@ -8,9 +8,31 @@
         </div>
       </div>
     </footer>
+
+    <div class="cb-search-tool fixed">
+      <input type="text" class="cb-search-content center" id="cb-search-content" placeholder="Title / Data / Tags" style="font-size: 24px">
+
+      <div class="close-search fixed wave-affect">
+        <i class="material-icons" id="cb-close-btn">close</i>
+      </div>
+
+    </div>
+
+    <div class="search-icon fixed wave-affect">
+      <i class="material-icons" id="cb-search-btn"  title="Double Click Ctrl">search</i>
+    </div>
+
+    
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/search.css">
     
     <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    <script src="{{site.baseurl}}/assets/js/cb-search.js"></script>
+    <script src="{{site.baseurl}}/assets/js/bootstrap3-typeahead.min.js"></script>
+
     {% for js in layout.js %}
     {% if js contains "//" %}
     <script src="{{js}}"></script>
@@ -34,5 +56,6 @@
     </script>
     {% endif %}
     <script src="{{site.baseurl}}/assets/js/main.js"></script>
+    
   </body>
 </html>
