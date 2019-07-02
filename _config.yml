@@ -37,7 +37,7 @@ baseurl: "" # does not include hostname
   
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 lsi:         false
 excerpt_separator: "\n\n"
 incremental: false
