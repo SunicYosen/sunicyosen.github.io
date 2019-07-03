@@ -1,0 +1,88 @@
+@media screen and (min-width: 768px) {
+  .dropdown-menu {
+position:relative;
+      float: none;
+      font-size: 22px;
+      text-align: center;
+      width: 60%;
+      margin-left: 20%;
+  }
+
+  .toc-tool {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    opacity: 1.0;
+    background-color: #1b1b1b;
+    width: 25%;
+    display: none;
+  }
+
+  .close-toc {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+  }
+  
+  .toc-icon {
+    position: fixed;
+    right: 16px;
+    bottom: 60px;
+    cursor: pointer;
+  }
+
+
+.toc-tool ul{
+       width: 60% ;
+       white-space:nowrap;
+       overflow:hidden;
+       text-overflow: ellipsis;
+   }
+}
+
+@media screen and (max-width: 767px) {
+  .dropdown-menu {
+position:relative;
+      float: none;
+      font-size: 20px;
+      width: 96%;
+      margin: 0 2%;
+  }
+
+  .toc-tool {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    opacity: 0.95;
+    background-color: #1b1b1b;
+    z-index: 9999;
+    display: none;
+  }
+  
+  .close-toc {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+  }
+  
+  .toc-icon {
+    position: fixed;
+    right: 16px;
+    bottom: 60px;
+    cursor: pointer;
+  }
+
+.toc-tool ul{
+width: 96% ;
+white-space:nowrap; 
+overflow:hidden; 
+text-overflow: ellipsis;
+}
+
+}
+
