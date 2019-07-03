@@ -55,11 +55,10 @@ position:relative;
     position: fixed;
     top: 0px;
     bottom: 0px;
-    left: 0px;
     right: 0px;
-    opacity: 0.95;
+    opacity: 1.0;
     background-color: #1b1b1b;
-    z-index: 9999;
+    width: 25%;
     display: none;
   }
   
