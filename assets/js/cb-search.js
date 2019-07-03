@@ -3,6 +3,7 @@ $(document).ready(function () {
     var show = false;
     var names = new Array(); //文章名字等
     var urls = new Array(); //文章地址
+    
     $(document).keyup(function (e) {
         var time2 = new Date().getTime();
         if (e.keyCode == 17) {
