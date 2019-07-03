@@ -3,6 +3,7 @@ layout: default
 css: ["post.css"]
 js: ["post.js"]
 ---
+<div class="post-all" id="post-all">
 <div id="post-info">
   <h3>{{page.title}}</h3>
   <ul class="collapsible hoverable" data-collapsible="accordion">
@@ -42,7 +43,8 @@ js: ["post.js"]
     {{ content }}
   </div>
 </div>
-  
+</div>
+
 <div class="back-to-top fixed wave-affect" id="back-to-top">
   <a href="#top">
     <span>
@@ -70,10 +72,13 @@ js: ["post.js"]
 <link rel="stylesheet" href="{{site.baseurl}}/assets/css/back-to-top.css">
 
 <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<!-- Bootstrap Core JavaScript -->
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!--
 <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+-->
 
 <script src="{{site.baseurl}}/assets/js/toc.js"></script>
 <script src="{{site.baseurl}}/assets/js/back-to-top.js"></script>
+
 <script src="{{site.baseurl}}/assets/js/bootstrap3-typeahead.min.js"></script>
