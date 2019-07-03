@@ -36,11 +36,44 @@ js: ["post.js"]
   </ul>
 </div>
 
-{% include toc.html html=content %}
-
 <div class="divider"></div>
 <div class="row">
   <div class="col s12">
     {{ content }}
   </div>
 </div>
+  
+<div class="back-to-top fixed wave-affect" id="back-to-top">
+  <a href="#top">
+    <span>
+      <i class="material-icons" id="back-to-top-btn"  title="TOP -- Double Click T">vertical_align_top</i>
+    </span>
+  </a>
+</div>
+
+<div class="toc-tool fixed">
+  <div class="toc-contents" id="toc-contents">
+    <h2 class="center" style="color: white; font-size: 24px; margin-top:10%;"> CONTENT </h2>
+    {% include toc.html html=content %}
+  </div>
+
+  <div class="close-toc fixed wave-affect">
+    <a><i class="material-icons" id="toc-close-btn">close</i></a>
+  </div>
+</div>
+
+<div class="toc-icon fixed wave-affect">
+  <a><i class="material-icons" id="toc-btn"  title="Content -- Double Click C">menu</i></a>
+</div>
+
+<link rel="stylesheet" href="{{site.baseurl}}/assets/css/toc.css">
+<link rel="stylesheet" href="{{site.baseurl}}/assets/css/back-to-top.css">
+
+<script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+<script src="{{site.baseurl}}/assets/js/toc.js"></script>
+<script src="{{site.baseurl}}/assets/js/back-to-top.js"></script>
+<script src="{{site.baseurl}}/assets/js/bootstrap3-typeahead.min.js"></script>
