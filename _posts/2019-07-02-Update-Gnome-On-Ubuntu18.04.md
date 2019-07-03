@@ -19,7 +19,7 @@ undo step 1, so that the rest of the packages on the machine can use the LTS upd
 the rest of the packages can be updated normally but the files I updated in 2 will need to be updated manually via a script that will be built with the list made in step 3.
 I've made a very thorough tutorial on how to do this. Should you follow this closely, you should not have any trouble but know that there are no guaranties and that you are playing with things that could break an install, so backup your install before doing this or do this on a virtual machine to see how it goes for you.
 
-## Prep
+##### Prep
 
 Unless I specify otherwise, assume all commands are in elevated privileges and that I just don't feel like typing sudo 100 times. To go into sudo mode enter:
 
@@ -29,7 +29,7 @@ Before doing anything, make sure all is in order by running:
 
 > apt-get --fix-broken install
 
-## Step 1
+##### Step 1
 
 Make a copy of the original and temporarily modifiy the apt repository lists so that it checks the cosmic repos for updates instead of the bionic ones:
 
@@ -45,14 +45,14 @@ Make a copy of the original and temporarily modifiy the apt repository lists so 
 > mkdir /etc/apt.bak \
 > cp /etc/apt/sources.* /etc/apt.bak \
 
-## Step 2
+##### Step 2
 
 update package lists and check for upgradable packages:
 
 > apt update \
 > apt list --upgradable > upgradable
 
-## Step 3
+##### Step 3
 
 Using grep, run a text based search for the number 3.30 and 3.28 which should only show you the updates related to the gnome shell. Additionally you can search for packages related to wayland (essential!) and glib, gir, gtk (up to you). I really don't care about xorg as I think it's terribly insecure but if you want to use gnome-x11, you can search for xorg packages to update as well. The idea behind this approach is to avoid upgrading too many packages to the cosmic branch because cosmic only has 9 months of fixes and bionic will have 5-10 years of security updates and fixes, so it is to your interest to keep as much of your system as possible on the bionic line.
 
@@ -95,7 +95,7 @@ each upgradable list should look something like this
 
 **You should be upgrading a max of 100 to 250 packages out of 1500**
 
-## Step 4
+##### Step 4
 
 Using sed, reformat the lists made in step 3 to turn this:
 
@@ -121,7 +121,7 @@ make the newly created script executable
 
 > chmod +x up-*
 
-## Step 5
+##### Step 5
 
 Taking note of the time and date before beginning, I used the results of 4 to update the packages that need updating
 
@@ -153,7 +153,7 @@ Then record the end time:
 Reboot your machine
 >reboot
 
-## Step 6
+##### Step 6
 
 The files upgraded in 5 are no longer on the LTS update track. Meaning, when step 1 is undone and an update initiated, the normal bionic packages will update but these ones will always be considered newer. Furthermore, any depends updated or installed in step 5 will be in the same situation. Updating these packages will require the creation of a script that will update them manually.
 
@@ -176,16 +176,16 @@ Make the script executable and move it to /usr/bin
 > chmod +x update-cosmics \
 > cp update-cosmics /usr/bin
 
-## Step 7
+##### Step 7
 
 Undo Step 1 to allow your system to perform updates normally.
 > cp /etc/apt/sources.list.bionic /etc/apt/sources.list;apt update
 
-## Step 8
+##### Step 8
 
 use update-cosmics to temporarilly switch to cosmic repos and update the packages on the cosmic track. you can run it manually or schedule it using cron.
 
-## Step 9: Bonus Round: Ditch Nautilus 3.26
+##### Step 9: Bonus Round: Ditch Nautilus 3.26
 
 This is a matter of preference: if you don't use desktop icons or if you want to give the desktop icons extension a try, you can get rid of the outdated nautilus 3.26 that ubuntu has forked for the much improved nautilus 3.30. I like 3.30 because it has WAY better touch screen support and because 3.26's implementation of Desktop icons injects a X11 layer (XWayland really) - even if you are running a wayland session. The desktop icons gnome-shell extension only works with 3.30, it is about 80% feature complete but does not inject an X11 layer into your Wayland session.
 
