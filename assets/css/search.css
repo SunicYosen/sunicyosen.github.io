@@ -32,19 +32,19 @@ position:relative;
     position: relative;
     top:40px;
   }
-
-
   
   .close-search {
     position: fixed;
     top: 16px;
     right: 16px;
+    cursor: pointer;
   }
   
   .search-icon {
     position: fixed;
     right: 16px;
     bottom: 20px;
+    cursor: pointer;
   }
 
 
@@ -86,12 +86,14 @@ position:relative;
     position: fixed;
     top: 16px;
     right: 16px;
+    cursor: pointer;
   }
   
   .search-icon {
     position: fixed;
     right: 16px;
     bottom: 20px;
+    cursor: pointer;
   }
 
 .cb-search-tool ul{
