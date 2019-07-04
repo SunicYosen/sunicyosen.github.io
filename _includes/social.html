@@ -1,0 +1,41 @@
+<div class="social center-align">
+  <div class="row1 center-align">
+
+    {% if site.social.github %}
+      <!-- Github -->
+      <div class="social-item" style="display:inline;">
+        <a href="https://github.com/{{site.social.github}}" title="Github" target="_blank">
+          <img src="{{site.baseurl}}/assets/res/github.ico"/>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if site.social.weibo %}
+      <!-- Weibo -->
+      <div class="social-item" style="display:inline; margin-left: 20px;">
+        <a href="http://weibo.com/{{site.social.weibo}}" title="WeiBo" target="_blank">
+          <img src="{{site.baseurl}}/assets/res/weibo.ico"/>
+        </a>
+      </div>
+    {% endif %}
+    
+    {% if site.social.twitter %}
+      <!-- Twitter -->
+      <div class="social-item" style="display:inline; margin-left: 20px;">
+        <a href="http://twitter.com/{{site.social.twitter}}" title="Twitter" target="_blank">
+          <img src="{{site.baseurl}}/assets/res/twitter.ico"/>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if site.social.mail %}
+      <!-- Email -->
+      <div class="social-item" style="display:inline; margin-left: 20px;">
+        <a href="mailto:{{site.social.mail}}" title="Contact me">
+          <i class="material-icons email-icon" id="email-icon">email</i>
+        </a>
+      </div>
+    {% endif %}
+
+  </div>
+</div>

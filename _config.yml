@@ -29,6 +29,12 @@ github_profile: "https://github.com/sunicyosen"
 user: "Sunic Yosen"
 user_email: "sunicyosen@outlook.com"
 
+# Social
+social:
+    weibo: sunicyosen
+    github: sunicyosen
+    twitter: sunicyosen
+
 # Serving
 detach:  false
 port:    4000
