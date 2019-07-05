@@ -1,7 +1,6 @@
 $(document).ready(function () {
     var time1 = 0;
     var show = false;
-    var margin_right = 25%
 
     $(document).keyup(function (e) {
         var time2 = new Date().getTime();
@@ -12,11 +11,17 @@ $(document).ready(function () {
             if (gap < 500) {
                 if (show) {
                     $(".toc-tool").css("display", "none");
-                    $(".post-all").css('margin-right', '5%');
+                    $(".post-all").css('margin-right', '10%');
+                    $(".post-all").css('width', '90%');
+                    $(".previous_page").css('width', '45%');
+                    $(".next_page").css('width', '45%');
                     show = false;
                 } else {
                     $(".toc-tool").css("display", "block");
-                    $(".post-all").css('margin-right', '33%');
+                    $(".post-all").css('margin-right', '30%');
+                    $(".post-all").css('width', '70%');
+                    $(".previous_page").css('width', '35%');
+                    $(".next_page").css('width', '35%');
                     show = true;
                 }
                 time1 = 0;
@@ -24,7 +29,10 @@ $(document).ready(function () {
         }
         else if (e.keyCode == 27) {
             $(".toc-tool").css("display", "none");
-            $(".post-all").css('margin-right', '5%');
+            $(".post-all").css('margin-right', '10%');
+            $(".post-all").css('width', '90%');
+            $(".previous_page").css('width', '45%');
+            $(".next_page").css('width', '45%');
             show = false;
             time1 = 0;
         }
@@ -38,11 +46,17 @@ $(document).ready(function () {
             if (gap < 500) {
                 if (show) {
                     $(".toc-tool").css("display", "none");
-                    $(".post-all").css('margin-right', '5%');
+                    $(".post-all").css('margin-right', '10%');
+                    $(".post-all").css('width', '90%');
+                    $(".previous_page").css('width', '45%');
+                    $(".next_page").css('width', '45%');
                     show = false;
                 } else {
                     $(".toc-tool").css("display", "block");
-                    $(".post-all").css('margin-right', '33%');
+                    $(".post-all").css('margin-right', '30%');
+                    $(".post-all").css('width', '70%');
+                    $(".previous_page").css('width', '35%');
+                    $(".next_page").css('width', '35%');
                     show = true;
                 }
                 time1 = 0;
@@ -53,7 +67,10 @@ $(document).ready(function () {
 
     $("#toc-close-btn").click(function () {
         $(".toc-tool").css("display", "none");
-        $(".post-all").css('margin-right', '5%');
+        $(".post-all").css('margin-right', '10%');
+        $(".post-all").css('width', '90%');
+        $(".previous_page").css('width', '45%');
+        $(".next_page").css('width', '45%');
         show = false;
         time1 = 0;
     });
@@ -61,13 +78,19 @@ $(document).ready(function () {
     $("#toc-btn").click(function () {
         if(show){
             $(".toc-tool").css("display", "none");
-            $(".post-all").css('margin-right', '5%');
+            $(".post-all").css('margin-right', '10%');
+            $(".post-all").css('width', '90%');
+            $(".previous_page").css('width', '45%');
+            $(".next_page").css('width', '45%');
             show = false;
             time1 = 0;
         }
         else{
             $(".toc-tool").css("display", "block");
             $(".post-all").css('margin-right', '33%');
+            $(".post-all").css('width', '70%');
+            $(".previous_page").css('width', '35%');
+            $(".next_page").css('width', '35%');
             show = true;
             time1 = 0;
         }

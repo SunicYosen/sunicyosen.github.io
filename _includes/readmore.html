@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+<section class="read-more row">
+    <div class="col previous_page" id="previous_page">
+    {% if page.previous %}
+        {% assign previous_page = page.previous %}
+        <div class="read-more-item">
+            <a href="{{ previous_page.url }}" title="link to {{ previous_page.title }}">
+                <i class="fa fa-arrow-left previous_page text-darken-4" style="display: inline; font-size: 18px;"></i>
+                <div class="post-title" style="color: black; font-family: monospace; font-size: 18px; display: inline;">
+                    {{ previous_page.title }}
+                </div>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="col next_page" id="next_page">
+        {% if page.next %}
+        {% assign next_page = page.next %}
+        <div class="read-more-item">
+                <a href="{{ next_page.url }}" title="link to {{ next_page.title }}">
+                    <div class="post-title" style="color: black; font-family: monospace; font-size: 18px; display: inline;">
+                        {{ next_page.title }}
+                    </div>
+                    <i class="fa fa-arrow-right next_page text-darken-4" style="display: inline; font-size: 18px;"></i>
+                </a>
+        </div>
+        {% endif %}
+    </div>
+</section>
