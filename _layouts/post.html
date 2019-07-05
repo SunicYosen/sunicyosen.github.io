@@ -43,8 +43,8 @@ js: ["post.js"]
               CN: {{ page.content | strip_html | strip_newlines | split: " " | size }}
             </div>
             <div class="chip">
-              <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="time-for-reading">timer</i>
-              ~ {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350}} min
+              <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Time For Reading">timer</i>
+              ~ {{ page.content | strip_html | strip_newlines | split: " " | size | divided_by: 250 | plus: 1}} min
             </div>
           </div>
         </span>
