@@ -40,11 +40,11 @@ js: ["post.js"]
               EN: {{ page.content | number_of_words }}
             </div>
             <div class="chip">
-              CN: {{ content | strip_html | strip_newlines | split: " " | size }}
+              CN: {{ page.content | strip_html | strip_newlines | split: " " | size }}
             </div>
             <div class="chip">
               <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="time-for-reading">timer</i>
-              ~ {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} min
+              ~ {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350}} min
             </div>
           </div>
         </span>
