@@ -30,7 +30,7 @@ Markdown的优点如下：
 
 ----
 
-## 2. Emphasis（强调）
+## 2. 强调 Emphasis
 
 强调是通过在文字两侧加入星号（`*`）、下划线（`_`）和波浪线（`~`）等符号实现的，注意符号和需要强调的文字之间没有空格
 
@@ -56,7 +56,7 @@ _You **can** combine them_（可以多种格式复合使用）
 
 ----
 
-## 3. 换行
+## 3. 换行 New Line
 
 在Markdown中，使用在行末尾两个空格来换行。  
 Use two trailing spaces on the right to create linebreak tags.
@@ -133,7 +133,7 @@ Use two trailing spaces on the right to create linebreak tags.
 
 ----
 
-## 5. 链接
+## 5. 链接 Link
 
 Markdown中主要包括网页链接和图片等链接。
 
@@ -159,7 +159,7 @@ Github链接: [Sunic Github](https://www.github.com/sunicyosen)
 
 ----
 
-## 6. 引用
+## 6. 引用 Quotation
 
 在我们写作的时候经常需要引用他人的文字，这个时候引用这个格式就很有必要了，在 Markdown 中，你只需要在你希望引用的文字前面加上 `>` 就好了，例如：
 
@@ -174,7 +174,7 @@ Github链接: [Sunic Github](https://www.github.com/sunicyosen)
 
 ----
 
-## 7. 代码引用
+## 7. 代码引用 Code
 
 需要引用代码时，如果引用的语句只有一段，不分行，可以用'`'将语句包起来。例如：
 
@@ -193,7 +193,7 @@ int main()
 
 ----
 
-## 8. 表格
+## 8. 表格 Table
 
 例如：
 
@@ -215,7 +215,7 @@ int main()
 
 ----
 
-## 9. 分割线
+## 9. 分割线 Dividing line
 
 Markdown中使用3个以上的`-`或者`*`插入分割线。同一篇文章中推荐使用同一种。
 eg:
