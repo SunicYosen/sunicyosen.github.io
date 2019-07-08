@@ -35,7 +35,7 @@ position:relative;
 
 
 .toc-tool ul{
-       width: 60% ;
+       width: 100% ;
        white-space:nowrap;
        overflow:hidden;
        text-overflow: ellipsis;
@@ -56,9 +56,9 @@ position:relative;
     top: 0px;
     bottom: 0px;
     right: 0px;
-    opacity: 1.0;
+    opacity: 0.9;
     background-color: #1b1b1b;
-    width: 25%;
+    width: 100%;
     display: none;
   }
   
@@ -76,12 +76,12 @@ position:relative;
     cursor: pointer;
   }
 
-.toc-tool ul{
-width: 96% ;
-white-space:nowrap; 
-overflow:hidden; 
-text-overflow: ellipsis;
-}
+  .toc-tool ul{
+    width: 100% ;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow: ellipsis;
+  }
 
 }
 
