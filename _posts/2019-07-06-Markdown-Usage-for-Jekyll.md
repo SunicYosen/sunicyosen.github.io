@@ -265,6 +265,19 @@ $$
 e^z = 1 + \frac{z}{1!} + \frac{z^2}{2!} + \frac{z^3}{3!} + \cdots = \sum_{n=0}^{\infty}\frac{z^n}{n!}
 $$
 
+### Github Page 数学公式的渲染
+
+Github page 不支持Markdown的原生的数学公式，需要借助其他工具，外挂Javascript的方案支持跨浏览器的内容渲染。参考[在 Github.Page渲染数学公式](https://wanguolin.github.io/mathmatics_rending/)
+
+在需要的html增加这样一句话：
+
+```javascript
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+```
+
+现在可以在`$$`和`$$`之间书写数学公式的语法了。注意，这里都使用`$$`.
+
+
 ## 11. 转义字符 Backslash
 
 如果想要插入以上内容中用到的一些符号（字面上，而非功能性应用），比如希望插入星号`*`，但不是用这个星号来表示斜体、加粗、列表等，那么可以在符号前面加反斜线`\`以插入这些普通符号。
@@ -306,15 +319,17 @@ $$
 也可以使用引用的方式。eg:
 
 ```markdwon
-Github Website: [Github][1]
+Github Website: [Github][Github]
 
-[1]: https://www.github.com "Github Web"
+[Github]: https://www.github.com "Github Web"
 ```
 
 效果：
 
-Github Website: [Github][1]
+Github Website: [Github][Github]
 
-[1]: https://www.github.com "Github Web"
+[Github]: https://www.github.com "Github Web"
 
 ## Reference
+
+[2]: https://wanguolin.github.io/mathmatics_rending/
