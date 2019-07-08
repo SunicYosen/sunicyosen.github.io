@@ -265,7 +265,7 @@ $$
 e^z = 1 + \frac{z}{1!} + \frac{z^2}{2!} + \frac{z^3}{3!} + \cdots = \sum_{n=0}^{\infty}\frac{z^n}{n!}
 $$
 
-### Github Page 数学公式的渲染
+### 10.1 Github Page 数学公式的渲染
 
 Github page 不支持Markdown的原生的数学公式，需要借助其他工具，外挂Javascript的方案支持跨浏览器的内容渲染。参考[在 Github.Page渲染数学公式](https://wanguolin.github.io/mathmatics_rending/)
 
