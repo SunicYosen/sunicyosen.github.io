@@ -4,11 +4,11 @@ title:      Markdown Usage for Jekyll
 date:       2019-07-06 09:32 +0800
 categories: Study
 author:     Sunic 
-tags:       [Study Markdown Jekyll]
+tags:       Study Markdown Jekyll
 summary:    In this blog, some of usage of markdown for jekyll are introduced.
 ---
 
-因为常写博客和网站搭建，经常用到Jekyll和Markdown，备忘下常用语法。
+搭建Github Page based on Jekyll， 使用了Markdown的语法。
 
 Markdown的优点如下：
 
