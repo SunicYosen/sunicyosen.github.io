@@ -27,11 +27,7 @@ TVM的主要作用与意义是:
 
 ### 2.1 TVM的结构框架
 
-<div align=center>
-
-  ![SystemOverviewofTVM](/img/2019-07-08-TVM-and-Others/System-Overview-of-TVM.png "System overview of TVM")
-
-</div>
+![SystemOverviewofTVM](/img/2019-07-08-TVM-and-Others/System-Overview-of-TVM.png "System overview of TVM"){: .center-image .eighty-percent-image}
 
 ## 3. TensorFlow XLA
 
