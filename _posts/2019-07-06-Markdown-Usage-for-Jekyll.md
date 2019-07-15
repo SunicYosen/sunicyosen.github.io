@@ -155,7 +155,57 @@ Github链接: [Sunic Github](https://www.github.com/sunicyosen)
 ![LOGO](/assets/res/logo.png "LOGO for Sunic")
 ```
 
+这样添加的图片为靠左的，效果如下图所示：
+
 ![LOGO](/assets/res/logo.png "LOGO for Sunic")
+
+#### 5.2.1 图片居中
+
+在Jekyll中，我们可以使用CSS的格式，将Markdown中的图片居中。首先，我们定义.center-image的CSS属性：
+
+```css
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
+```
+
+或者sass：
+
+```sass
+.center-image
+    margin: 0 auto
+    display: block
+```
+
+定义属性ID后，在Markdown中，我们可以通过如下的方式使用：
+
+```markdown
+![Picture description](/link/to/picture.jpg){: .center-image }
+```
+
+如果需要多个属性，可添加多个ID：
+
+```markdown
+![Picture text](/link/to/picture.jpg){: .center-image .example-class1 .example-class2 }
+```
+
+对于上图，可以居中，其语法如下：
+
+```markdown
+![LOGO](/assets/res/logo.png "LOGO for Sunic"){: .center-image }
+```
+
+效果图如下：
+
+![LOGO](/assets/res/logo.png "LOGO for Sunic"){: .center-image }
+
+通过类似的方法，我们可以调整其他属性。
+
+<span id="rr1"></span>
+
+本小节参考[[1]](#r1).
 
 ----
 
@@ -277,6 +327,9 @@ Github page 不支持Markdown的原生的数学公式，需要借助其他工具
 
 现在可以在`$$`和`$$`之间书写数学公式的语法了。注意，这里都使用`$$`.
 
+<span id="rr2"></span>
+
+本小节参考[[2]](#r2).
 
 ## 11. 转义字符 Backslash
 
@@ -330,6 +383,56 @@ Github Website: [Github][Github]
 
 [Github]: https://www.github.com "Github Web"
 
+### 12.1 参考文献页内跳转
+
+探索了一段时间的Markdown的参考文献, 没找到很好的实现方式，这里给出一个繁琐的实现。
+
+在参考文献的章节部分，使用:
+
+```html
+<span id="id_name"></span>
+```
+
+定义ID, 这样保证在其他地方可以地位到这个地方。
+
+在文中，使用链接的方式:
+
+```markdown
+[[1]](#id_name)
+```
+
+这样就可以实现参考文献的跳转。
+
+如：
+
+```markdown
+<span id="rr3"></span> 本小节参考[[3]](#r3).
+```
+
+Reference 如下：
+
+```markdown
+<span id="r3"></span>
+
+[[3]](#rr3): MarkDown页内跳转实现 [OL], 2019-07-15, [https://www.jianshu.com/p/0c5d6678ed6d](https://www.jianshu.com/p/0c5d6678ed6d)
+```
+
+效果如下：
+
+<span id="rr3"></span>
+
+本小节参考[[3]](#r3).
+
 ## Reference
 
-[2]: https://wanguolin.github.io/mathmatics_rending/
+<span id="r1"></span>
+
+[[1]](#rr1): Centering Images with Jekyll and Markdown [OL], 2019-07-15, [https://thornelabs.blog/posts/centering-images-with-jekyll-and-markdown.html](https://thornelabs.blog/posts/centering-images-with-jekyll-and-markdown.html)
+
+<span id="r2"></span>
+
+[[2]](#rr2): 在 Github.Page渲染数学公式 [OL], 2019-07-15, [https://wanguolin.github.io/mathmatics_rending/](https://wanguolin.github.io/mathmatics_rending/)
+
+<span id="r3"></span>
+
+[[3]](#rr3): MarkDown页内跳转实现 [OL], 2019-07-15, [https://www.jianshu.com/p/0c5d6678ed6d](https://www.jianshu.com/p/0c5d6678ed6d)

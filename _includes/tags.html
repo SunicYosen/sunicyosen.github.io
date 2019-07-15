@@ -3,7 +3,7 @@
     {% for tag in site.tags %}
     {% capture test %}{{tag[0] | slice: 0}}{% endcapture %}
     {% capture testup %}{{tag[0] | slice: 0 | upcase}}{% endcapture %}
-    <a class="tag-chip" href="#{{tag[0] | slugify}}{% if test == testup %}_cap{% endif %}"><div class="chip z-depth-1">{{tag[0]}}</div></a>
+    <a class="tag-chip" href="#{{tag[0] | slugify}}{% if test == testup %}{% endif %}"><div class="chip z-depth-1">{{tag[0]}}</div></a>
     {% endfor %}
   </div>
   <div class="divider"></div>
@@ -11,7 +11,7 @@
     {% for tag in site.tags %}
     {% capture test %}{{tag[0] | slice: 0}}{% endcapture %}
     {% capture testup %}{{tag[0] | slice: 0 | upcase}}{% endcapture %}
-    <h4 id="{{tag[0] | slugify}}{% if test == testup %}_cap{% endif %}">{{tag[0]}}</h4>
+    <h4 id="{{tag[0] | slugify}}{% if test == testup %}{% endif %}">{{tag[0]}}</h4>
     <ul class="tag-post">
       {% for post in tag[1] %}
       <a class="post-title" href="{{site.baseurl}}{{post.url}}" target="_blank">
