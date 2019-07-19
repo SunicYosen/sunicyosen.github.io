@@ -11,17 +11,17 @@ $(document).ready(function () {
             if (gap < 500) {
                 if (show) {
                     $(".toc-tool").css("display", "none");
-                    $(".post-all").css('margin-right', '10%');
-                    $(".post-all").css('width', '90%');
-                    $(".previous_page").css('width', '45%');
-                    $(".next_page").css('width', '45%');
+                    //$(".post-all").css('margin-right', '10%');
+                    $(".post-all").css('width', '100%');
+                    // $(".previous_page").css('width', '50%');
+                    // $(".next_page").css('width', '50%');
                     show = false;
                 } else {
                     $(".toc-tool").css("display", "block");
-                    $(".post-all").css('margin-right', '30%');
+                    //$(".post-all").css('margin-right', '30%');
                     $(".post-all").css('width', '70%');
-                    $(".previous_page").css('width', '35%');
-                    $(".next_page").css('width', '35%');
+                    // $(".previous_page").css('width', '50%');
+                    // $(".next_page").css('width', '50%');
                     show = true;
                 }
                 time1 = 0;
@@ -29,10 +29,10 @@ $(document).ready(function () {
         }
         else if (e.keyCode == 27) {
             $(".toc-tool").css("display", "none");
-            $(".post-all").css('margin-right', '10%');
-            $(".post-all").css('width', '90%');
-            $(".previous_page").css('width', '45%');
-            $(".next_page").css('width', '45%');
+            //$(".post-all").css('margin-right', '10%');
+            $(".post-all").css('width', '100%');
+            // $(".previous_page").css('width', '50%');
+            // $(".next_page").css('width', '50%');
             show = false;
             time1 = 0;
         }
@@ -46,17 +46,17 @@ $(document).ready(function () {
             if (gap < 500) {
                 if (show) {
                     $(".toc-tool").css("display", "none");
-                    $(".post-all").css('margin-right', '10%');
-                    $(".post-all").css('width', '90%');
-                    $(".previous_page").css('width', '45%');
-                    $(".next_page").css('width', '45%');
+                    //$(".post-all").css('margin-right', '10%');
+                    $(".post-all").css('width', '100%');
+                    // $(".previous_page").css('width', '50%');
+                    // $(".next_page").css('width', '50%');
                     show = false;
                 } else {
                     $(".toc-tool").css("display", "block");
-                    $(".post-all").css('margin-right', '30%');
+                    //$(".post-all").css('margin-right', '30%');
                     $(".post-all").css('width', '70%');
-                    $(".previous_page").css('width', '35%');
-                    $(".next_page").css('width', '35%');
+                    // $(".previous_page").css('width', '50%');
+                    // $(".next_page").css('width', '50%');
                     show = true;
                 }
                 time1 = 0;
@@ -67,10 +67,10 @@ $(document).ready(function () {
 
     $("#toc-close-btn").click(function () {
         $(".toc-tool").css("display", "none");
-        $(".post-all").css('margin-right', '10%');
-        $(".post-all").css('width', '90%');
-        $(".previous_page").css('width', '45%');
-        $(".next_page").css('width', '45%');
+        //$(".post-all").css('margin-right', '10%');
+        $(".post-all").css('width', '100%');
+        // $(".previous_page").css('width', '50%');
+        // $(".next_page").css('width', '50%');
         show = false;
         time1 = 0;
     });
@@ -78,19 +78,19 @@ $(document).ready(function () {
     $("#toc-btn").click(function () {
         if(show){
             $(".toc-tool").css("display", "none");
-            $(".post-all").css('margin-right', '10%');
-            $(".post-all").css('width', '90%');
-            $(".previous_page").css('width', '45%');
-            $(".next_page").css('width', '45%');
+            // $(".post-all").css('margin-right', '10%');
+            $(".post-all").css('width', '100%');
+            // $(".previous_page").css('width', '50%');
+            // $(".next_page").css('width', '50%');
             show = false;
             time1 = 0;
         }
         else{
             $(".toc-tool").css("display", "block");
-            $(".post-all").css('margin-right', '33%');
+            //$(".post-all").css('margin-right', '33%');
             $(".post-all").css('width', '70%');
-            $(".previous_page").css('width', '35%');
-            $(".next_page").css('width', '35%');
+            // $(".previous_page").css('width', '50%');
+            // $(".next_page").css('width', '50%');
             show = true;
             time1 = 0;
         }

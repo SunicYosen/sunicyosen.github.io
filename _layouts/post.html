@@ -55,20 +55,45 @@ js: ["post.js"]
 
 <p> </p>
 
-<div class="divider post-all" id="post-all"></div>
+<div class="divider"></div>
   <div class="row">
     <div class="col s12">
-      <div class="post-content" id="post-content">
+      <div class="post-content">
         {{content}}
       </div>
     </div>
   </div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="col s12">
+      {% include readmore.html %}
+  </div>
 </div>
 
-<div class="divider post-all" id="post-all"></div>
-  <div class="row">
+<div class="divider"> </div>
+
+<div class="row"> 
     <div class="col s12">
-        {% include readmore.html %}
+      <div id="gitalk-container"></div>
+
+        <link rel="stylesheet" href="/assets/css/gitalk.css">
+        <script src="/assets/js/gitalk.js"></script>
+
+        <script>
+          var gitalk = new Gitalk({
+            clientID: '100a9a95a892a68fa1a5',
+            clientSecret: 'd69639439909483d7cf6848a4203c2de2578cb61',
+            repo: 'comments-pages',
+            owner: 'sunicyosen',
+            admin: ['sunicyosen'],
+            id: location.pathname,      // Ensure uniqueness and length less than 50
+            distractionFreeMode: false  // Facebook-like distraction free mode
+          })
+
+          gitalk.render('gitalk-container')
+      </script>
     </div>
   </div>
 </div>
@@ -122,22 +147,3 @@ js: ["post.js"]
 <script src="{{site.baseurl}}/assets/js/to-bottom.js"></script>
 <script src="{{site.baseurl}}/assets/js/bootstrap3-typeahead.min.js"></script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
-<div id="gitalk-container"></div>
-
-<link rel="stylesheet" href="/assets/css/gitalk.css">
-<script src="/assets/js/gitalk.js"></script>
-
-<script>
-  var gitalk = new Gitalk({
-    clientID: '100a9a95a892a68fa1a5',
-    clientSecret: 'd69639439909483d7cf6848a4203c2de2578cb61',
-    repo: 'comments-pages',
-    owner: 'sunicyosen',
-    admin: ['sunicyosen'],
-    id: location.pathname,      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-</script>
