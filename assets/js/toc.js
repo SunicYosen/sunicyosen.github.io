@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var time1 = 0;
     var show = false;
+    var window_w = $(document).width();
 
     $(document).keyup(function (e) {
         var time2 = new Date().getTime();
@@ -19,7 +20,15 @@ $(document).ready(function () {
                 } else {
                     $(".toc-tool").css("display", "block");
                     //$(".post-all").css('margin-right', '30%');
-                    $(".post-all").css('width', '70%');
+                    if(window_w >= 768)
+                    {
+                        $(".post-all").css('width', '70%');
+                    }
+                    else
+                    {
+                        $(".post-all").css('width', '100%');
+                    }
+                    
                     // $(".previous_page").css('width', '50%');
                     // $(".next_page").css('width', '50%');
                     show = true;
@@ -54,7 +63,14 @@ $(document).ready(function () {
                 } else {
                     $(".toc-tool").css("display", "block");
                     //$(".post-all").css('margin-right', '30%');
-                    $(".post-all").css('width', '70%');
+                    if(window_w >= 768)
+                    {
+                        $(".post-all").css('width', '70%');
+                    }
+                    else
+                    {
+                        $(".post-all").css('width', '100%');
+                    }
                     // $(".previous_page").css('width', '50%');
                     // $(".next_page").css('width', '50%');
                     show = true;
@@ -88,7 +104,14 @@ $(document).ready(function () {
         else{
             $(".toc-tool").css("display", "block");
             //$(".post-all").css('margin-right', '33%');
-            $(".post-all").css('width', '70%');
+            if(window_w >= 768)
+            {
+                $(".post-all").css('width', '70%');
+            }
+            else
+            {
+                $(".post-all").css('width', '100%');
+            }
             // $(".previous_page").css('width', '50%');
             // $(".next_page").css('width', '50%');
             show = true;
