@@ -122,3 +122,19 @@ js: ["post.js"]
 <script src="{{site.baseurl}}/assets/js/to-bottom.js"></script>
 <script src="{{site.baseurl}}/assets/js/bootstrap3-typeahead.min.js"></script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<div id="container"></div>
+<link rel="stylesheet" href="/assets/css/gitment.css">
+<script src="/assets/js/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '', // 可选。默认为 location.href
+  owner: 'sunicyosen',
+  repo: 'comments-pages',
+  oauth: {
+    client_id: '100a9a95a892a68fa1a5',
+    client_secret: 'd69639439909483d7cf6848a4203c2de2578cb61',
+  },
+})
+gitment.render('container')
+</script>
