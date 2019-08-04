@@ -173,18 +173,18 @@ summary: 搭建TVM环境
    3. `libtvm.so`
 
       完整的tvm，由编译时、运行时、rpc部分等组成：
-      - `common`: Internal common utilities.
-      - `api`: API function registration.
-      - `lang`: The definition of DSL related data structure.
-      - `arithmetic`: Arithmetic expression and set simplification.
-      - `op`: The detail implementations about each operation(compute, scan, placeholder).
-      - `schedule`: The operations on the schedule graph before converting to IR.
-      - `pass`: The optimization pass on the IR structure.
-      - `codegen`: The code generator.
-      - `runtime`: Minimum runtime related codes.
-      - `autotvm`: The auto-tuning module.
-      - `relay`: Implementation of Relay. The second generation of NNVM, a new IR for deep learning frameworks.
-      - `contrib`: Contrib extension libraries.
+      - **`common`**: Internal common utilities.
+      - **`api`**: API function registration.
+      - **`lang`**: The definition of DSL related data structure.
+      - **`arithmetic`**: Arithmetic expression and set simplification.
+      - **`op`**: The detail implementations about each operation(compute, scan, placeholder).
+      - **`schedule`**: The operations on the schedule graph before converting to IR.
+      - **`pass`**: The optimization pass on the IR structure.
+      - **`codegen`**: The code generator.
+      - **`runtime`**: Minimum runtime related codes.
+      - **`autotvm`**: The auto-tuning module.
+      - **`relay`**: Implementation of Relay. The second generation of NNVM, a new IR for deep learning frameworks.
+      - **`contrib`**: Contrib extension libraries.
 
       这个库比较大，有200多个编译单元：
 
