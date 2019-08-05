@@ -2,7 +2,7 @@
 layout: post
 title: Design Compiler Usage
 date: 2019-07-23 13:20
-category: Study
+category: IC
 author: Sunic
 tags: ['Design Compiler', Synopsys, RTL]
 summary: 

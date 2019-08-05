@@ -2,7 +2,7 @@
 layout: post
 title: Compile Linux Kernel in Ubuntu18.04
 date: 2019-07-16 11:12
-category: Linux
+category: Skill
 author: Sunic
 tags: [Compile, "Linux Kernel", Install, Uninstall, Strip]
 summary: The post record the experience of Compiling Linux kernel in Ubuntu18.04.
