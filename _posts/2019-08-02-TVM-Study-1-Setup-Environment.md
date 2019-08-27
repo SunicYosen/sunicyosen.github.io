@@ -124,7 +124,8 @@ summary: 搭建TVM环境
    ```
 
    最终链接出以下so库：
-   - `libvta.so`
+   - `libvta_tsim.so`
+   - `libvta_fsim.so`
    - `libtvm_runtime.so`
    - `libtvm.so`
    - `libtvm_topi.so`
@@ -132,9 +133,20 @@ summary: 搭建TVM环境
 
    具体如下：<span id="rrf1"></span>[[1]](#rf1)
 
-   1. `libvta.so`
+   1. `libvta_tsim.so`
 
-      VTA--Versatile Tensor Accelerator，参考[VTA](https://docs.tvm.ai/vta/index.html)，由以下这几个编译单元生成。
+      VTA--Versatile Tensor Accelerator，参考[VTA](https://docs.tvm.ai/vta/index.html)，该库为其Cycle级仿真库，由以下这几个编译单元生成:
+
+      ```bash
+      vta/src/device_api.cc
+      vta/src/runtime.cc
+      vta/src/tsim/tsim_driver.cc
+      vta/src/dpi/module.cc
+      ```
+
+   2. `libvta_fsim.so`
+
+      该库为其快速仿真库，由以下这几个编译单元生成:
 
       ```bash
       vta/src/device_api.cc
@@ -142,7 +154,7 @@ summary: 搭建TVM环境
       vta/src/sim/sim_driver.cc
       ```
 
-   2. `libtvm_runtime.so`
+   3. `libtvm_runtime.so`
 
       顾名思义，tvm的运行时，实际上，这个库是TVM运行时的一个最小化库，由“Minimum runtime related codes”编译而成——也即下面的这些源文件：
 
@@ -170,7 +182,7 @@ summary: 搭建TVM环境
       src/contrib/sort/sort.cc
       ```
 
-   3. `libtvm.so`
+   4. `libtvm.so`
 
       完整的tvm，由编译时、运行时、rpc部分等组成：
       - **`common`**: Internal common utilities.
@@ -211,7 +223,7 @@ summary: 搭建TVM环境
       src/contrib/sort/sort.cc
       ```
 
-   4. `libtvm_topi.so`
+   5. `libtvm_topi.so`
 
       TOPI（TVM OP Inventory），is the operator collection library for TVM intended at sharing the effort of crafting and optimizing tvm generated kernels。由下面的编译单元生成：
 
@@ -219,7 +231,7 @@ summary: 搭建TVM环境
       topi/src/topi.cc
       ```
 
-   5. libnnvm_compiler.so
+   6. libnnvm_compiler.so
 
       NNVM编译器，由以下编译单元生成：
 
@@ -282,3 +294,7 @@ export PYTHONPATH=$TVM_HOME/python:$TVM_HOME/topi/python:$TVM_HOME/nnvm/python:$
 ## Reference
 
 <span id="rf1"></span>[[1]](#rrf1) Gemfield, PyTorch转TVM, [OL], 2019-08-04 [https://zhuanlan.zhihu.com/p/58995914](https://zhuanlan.zhihu.com/p/58995914)
+
+## 更新日志
+
+1. 2019.08.27: 代码更新`libvta_tsim.so`和`libvta_fsim.so`.

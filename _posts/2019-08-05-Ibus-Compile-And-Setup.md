@@ -7,3 +7,5 @@ author: Sunic
 tags: ['Ibus Compile', 'Input Method', 'ibus rime', 'fcitx5']
 summary: 
 ---
+
+在使用Linux
