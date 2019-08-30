@@ -130,6 +130,7 @@ summary: 搭建TVM环境
    - `libtvm.so`
    - `libtvm_topi.so`
    - `libnnvm_compiler.so`
+   - `libvta_hw.so`
 
    具体如下：<span id="rrf1"></span>[[1]](#rf1)
 
@@ -231,7 +232,7 @@ summary: 搭建TVM环境
       topi/src/topi.cc
       ```
 
-   6. libnnvm_compiler.so
+   6. `libnnvm_compiler.so`
 
       NNVM编译器，由以下编译单元生成：
 
@@ -247,6 +248,21 @@ summary: 搭建TVM环境
       nnvm/src/top/vision/yolo/reorg.cc
       nnvm/src/top/image/resize.cc
       ```
+
+   7. `libvta_hw.so`
+
+      在使用vta的TSIM仿真器时，需要通过使用hardware-chisel编译的硬件动态链接库`libvta_hw.so`。其具体的编译流程如下:
+
+      首先进入$TVM_HOME/vta/hardware/chisel下，在Makefile文件中添加编译参数`-fPIC`如下：
+
+      `cxx_flags += -fPIC`
+
+      然后，通过make编译即可。
+
+      添加编译参数的目的是避免如下错误.
+
+      <span id="rrf2"></span>[[2]](#rf2)
+      `relocation R_X86_64_32 against '.rodata' can not be used when making a shared object;`
 
 ## 3. Python环境
 
@@ -295,6 +311,9 @@ export PYTHONPATH=$TVM_HOME/python:$TVM_HOME/topi/python:$TVM_HOME/nnvm/python:$
 
 <span id="rf1"></span>[[1]](#rrf1) Gemfield, PyTorch转TVM, [OL], 2019-08-04 [https://zhuanlan.zhihu.com/p/58995914](https://zhuanlan.zhihu.com/p/58995914)
 
+<span id="rf2"></span>[[1]](#rrf2) [OL], [https://blog.csdn.net/u010312436/article/details/52486811](https://blog.csdn.net/u010312436/article/details/52486811)
+
 ## 更新日志
 
 1. 2019.08.27: 代码更新`libvta_tsim.so`和`libvta_fsim.so`.
+2. 2019.08.28: 添加`libvta_hw.so`说明.
