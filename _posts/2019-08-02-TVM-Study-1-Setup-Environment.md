@@ -257,11 +257,14 @@ summary: 搭建TVM环境
 
       `cxx_flags += -fPIC`
 
+      </span id="rrf2"></span>
+      `-fPIC`: The `f` is the gcc prefix for options that "control the interface conventions used in code generation". The `PIC` stands for "Position Independent Code", it is a specialization of the fpic for m68K and SPARC.[[2]](#rf2)
+
       然后，通过make编译即可。
 
       添加编译参数的目的是避免如下错误.
 
-      <span id="rrf2"></span>[[2]](#rf2)
+      <span id="rrf3"></span>[[3]](#rf3)
       `relocation R_X86_64_32 against '.rodata' can not be used when making a shared object;`
 
 ## 3. Python环境
@@ -311,9 +314,12 @@ export PYTHONPATH=$TVM_HOME/python:$TVM_HOME/topi/python:$TVM_HOME/nnvm/python:$
 
 <span id="rf1"></span>[[1]](#rrf1) Gemfield, PyTorch转TVM, [OL], 2019-08-04 [https://zhuanlan.zhihu.com/p/58995914](https://zhuanlan.zhihu.com/p/58995914)
 
-<span id="rf2"></span>[[1]](#rrf2) [OL], [https://blog.csdn.net/u010312436/article/details/52486811](https://blog.csdn.net/u010312436/article/details/52486811)
+<span id="rf2"></span>[[2]](#rrf2) What does -fPIC mean when building a shared library? [OL], [https://stackoverflow.com/questions/966960/what-does-fpic-mean-when-building-a-shared-library](https://stackoverflow.com/questions/966960/what-does-fpic-mean-when-building-a-shared-library)
+
+<span id="rf3"></span>[[3]](#rrf3)[OL], [https://blog.csdn.net/u010312436/article/details/52486811](https://blog.csdn.net/u010312436/article/details/52486811)
 
 ## 更新日志
 
 1. 2019.08.27: 代码更新`libvta_tsim.so`和`libvta_fsim.so`.
 2. 2019.08.28: 添加`libvta_hw.so`说明.
+3. 2019.08.01: 添加`-fPIC`说明。
