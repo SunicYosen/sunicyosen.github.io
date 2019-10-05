@@ -410,6 +410,11 @@ sudo apt install geary
 
    | Behavior | Key   |
    |:--------:|:-----:|
+   |Switch to workspace 1|Alt+1|
+   |Switch to workspace 2|Alt+2|
+   |Switch to workspace 3|Alt+3|
+   |Switch to workspace 4|Alt+4|
+   |Copy a screenshot of an area to clipboard| Print|
 
 2. Fonts <span id="fonts"></span>
 
