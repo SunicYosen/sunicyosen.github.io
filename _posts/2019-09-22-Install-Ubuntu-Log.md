@@ -483,11 +483,11 @@ sudo apt install geary
    reboot
    ```
 
-   参考[[1]]("#rf1")<span id="rrf1"></span>
+   参考[[1]](#rf1)<span id="rrf1"></span>
 
 ## Reference
 
-<span id="rf1"></span> [[1]]("#rrf1") ubuntu 14.04下配置terminal为zsh默认环境 [OL], [https://blog.csdn.net/zxgdll/article/details/70858857](https://blog.csdn.net/zxgdll/article/details/70858857)
+<span id="rf1"></span> [[1]](#rrf1) ubuntu 14.04下配置terminal为zsh默认环境 [OL], [https://blog.csdn.net/zxgdll/article/details/70858857](https://blog.csdn.net/zxgdll/article/details/70858857)
 
 ## Update
 
