@@ -14,14 +14,14 @@ summary:    The log of Install and Use Ubuntu
 
 安装使用Ubuntu18.04.3版本制作的U盘启动盘，最小化安装。安装后首先更换源，然后更新：
 
-`/etc/apt/sources.list`中的网址修改为[ http://ftp.sjtu.edu.cn/ubuntu/]( http://ftp.sjtu.edu.cn/ubuntu/)
+`/etc/apt/sources.list`中的网址修改为[http://ftp.sjtu.edu.cn/ubuntu/]( http://ftp.sjtu.edu.cn/ubuntu/)
 
 ```bash
 sudo apt update
 sudo apt upgrade
 sudo apt autoremove
 ```
-sudo
+
 ### 1. Ubuntu -> Gnome
 
 ```bash
@@ -60,7 +60,7 @@ sudo apt remove ubuntu-standard
 sudo apt autoremove
 # busybox-static command-not-found command-not-found-data dnsutils   friendly-recovery ftp hdparm info iputils-tracepath irqbalance libirs160 libnih1 libnuma1 lshw lsof ltrace mtr-tiny nano popularity-contest python3-commandnotfound python3-gdbm rsync strace tcpdump telnet time ufw ureadahead usbutils
 
-# Acording to needed Install: 
+# Acording to needed Install:
 sudo apt install ftp lshw usbutils dnsutils libirs160
 
 sudo apt remove ubuntu-release-upgrader-core
@@ -127,6 +127,7 @@ sudo apt install chrome-gnome-shell
 - Remove Dropdown Arrows: [Remove Dropdown Arrows](https://extensions.gnome.org/extension/800/remove-dropdown-arrows/)
 - Status Area Horizontal Spacing: [Status Area Horizontal Spacing](https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/)
 - KStatusNotifierItem/AppIndicator Support: [KStatusNotifierItem/AppIndicator Support](https://extensions.gnome.org/extension/615/appindicator-support/)
+- Workspace Indicator: [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
 
 ### 5. 输入法
 
@@ -197,7 +198,7 @@ sudo apt install vim
 
 VS Code 可以在官网下载安装包：
 
-[VS Code](https://code.visualstudio.com/download) 
+[VS Code](https://code.visualstudio.com/download)
 
 ```bash
 sudo dpkg -i xxx.deb
@@ -208,7 +209,7 @@ sudo apt update
 
 会将Code的安装源加入Ubuntu目录： [/etc/apt/sources.list.d](file:///etc/apt/sources.list.d)
 
-9. git
+### 9. git
 
 ```bash
 sudo apt install git
@@ -216,7 +217,7 @@ sudo apt install git
 cp File/Temp/.gitconfig ~/
 ```
 
-10. geary
+### 10. geary
 
 ```bash
 sudo add-apt-repository ppa:geary-team/releases
@@ -225,173 +226,264 @@ sudo apt install geary
 # geary libgee-0.8-2 libgmime-2.6-0 libmessaging-menu0
 ```
 
+可以使用gnome的gnome-account登录Outlook和Gmail.
+
 ## Use Log
 
 以上Install介绍了基本的需求，下面就是基本的使用。主要是应用的安装。
 
 ### 1. Install APPS
 
-1. google chrome: [google chrome](https://www.google.com/intl/zh-CN/chrome/)
+1. google chrome
+   下载地址： [google chrome](https://www.google.com/intl/zh-CN/chrome/)
 
-2. aria2: 
-   
-```bash
-sudo apt install aria2
-# aria2 libc-ares2
-```
+2. aria2
 
-设置aria2的方式，将aria2.conf -> ~/.aria2/
+   设置aria2的方式，将aria2.conf -> ~/.aria2/
 
-```bash
-mv ~/File/Temp/.config/aria2.conf ~/.config/
-```
+   ```bash
+   sudo apt install aria2
+   # aria2 libc-ares2
+   mv ~/File/Temp/.config/aria2.conf ~/.config/
+   ```
 
 3. WPS-office
 
-从[WPS](http://wps-community.org/downloads)下载最新的版本。
+   从[WPS](http://wps-community.org/downloads)下载最新的版本。
 
-```bash
-sudo dpkg -i xxx.deb
-```
+   ```bash
+   sudo dpkg -i xxx.deb
+   ```
 
-需要安装WPS Fonts来顺利使用，具体参见[Fonts]('#fonts')的安装。
+   需要安装WPS Fonts来顺利使用，具体参见[Fonts](#fonts)的安装。
 
-4. Qt 
+4. Qt
 
-在[http://download.qt.io/archive/qt/](http://download.qt.io/archive/qt/)下载，具体参见Qt Install PDF.
+   在[http://download.qt.io/archive/qt/](http://download.qt.io/archive/qt/)下载.然后命令行下执行安装.
 
-将.myrc.sh中关于QT的环境变量配置上。
+   将.myrc.sh中关于QT的环境变量配置上:
 
-```bash
-export QTHOME=/home/SoftwareI/Qt
-export QTDIR=$QTHOME/5.13.1/gcc_64
-export QT_WEBKIT=true
-export MYPATH=$MYPATH:$QTHOME/Tools/QtCreator/bin
-export MYPATH=$MYPATH:$QTDIR/bin
-export PKG_CONFIG_PATH=$QTDIR/lib/pkgconfig
-export QT_PLUGIN_PATH=$QTDIR/plugins/
-export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$QT_PLUGIN_PATH/platforms:$LD_LIBRARY_PATH
-```
+   ```bash
+   export QTHOME=/home/SoftwareI/Qt
+   export QTDIR=$QTHOME/5.13.1/gcc_64
+   export QT_WEBKIT=true
+   export MYPATH=$MYPATH:$QTHOME/Tools/QtCreator/bin
+   export MYPATH=$MYPATH:$QTDIR/bin
+   export PKG_CONFIG_PATH=$QTDIR/lib/pkgconfig
+   export QT_PLUGIN_PATH=$QTDIR/plugins/
+   export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
+   export LD_LIBRARY_PATH=$QT_PLUGIN_PATH/   platforms:$LD_LIBRARY_PATH
+   ```
+
+   可以使用qtchooser:
+
+   ```bash
+   qtchooser -install NAMEQT /Path to Qt Installation Dir/Version/Platform/bin/qmake
+   # 2)Create symbol link: ln -s NAMEQT.conf default.conf
+   # Attention 1: NAMEQT.conf usually in :
+   #  $HOME/.config/qtchooser (NON Super User)
+   #  /usr/lib/x86_64-linux-gnu/qt-default/qtchooser (Super    User)
+   # Attention 2: Some Qt-chooser Dir:
+   # [/usr/bin/qtchooser] [/usr/lib/x86_64-linux-gnu/qtchooser] [/usr/share/qtchooser]
+   ```
 
 5. megasync
 
-在官网下载安装，[https://mega.nz/sync](https://mega.nz/sync)
+   在官网下载安装，[https://mega.nz/sync](https://mega.nz/sync), 需要翻墙下载最新的版本.
 
-```bash
-sudo dpkg -i xxx.deb
-sudo apt install -f
-# libcrypto++6 libdouble-conversion1 libmediainfo0v5 libmms0 libqt5core5a libqt5dbus5 libqt5gui5 libqt5network5 libqt5svg5 libqt5widgets5 libraw16 libtinyxml2-6 libxcb-xinerama0 libzen0v5 qt5-gtk-platformtheme qttranslations5-l10n
-```
+   ```bash
+   sudo dpkg -i xxx.deb
+   sudo apt install -f
+   # libcrypto++6 libdouble-conversion1 libmediainfo0v5    libmms0 libqt5core5a libqt5dbus5 libqt5gui5 libqt5network5    libqt5svg5 libqt5widgets5 libraw16 libtinyxml2-6    libxcb-xinerama0 libzen0v5 qt5-gtk-platformtheme    qttranslations5-l10n
+   ```
 
 6. transmission
 
-BT软件. 
+   BT软件,可用来下载pt
 
-```bash
-sudo apt install transmission=2.92-3ubuntu2
-# libevent-2.1-6 libminiupnpc10 libnatpmp1 transmission transmission-common transmission-gtk
-```
+   ```bash
+   sudo add-apt-repository ppa:transmissionbt/ppa
+   sudo apt-get update
+   sudo apt install transmission
+   # libevent-2.1-6 libminiupnpc10 libnatpmp1 transmission       transmission-common transmission-gtk
+   ```
 
 7. htop
 
-```bash
-sudo apt install htop
-```
+   ```bash
+   sudo apt install htop
+   ```
 
 8. goldendict
 
-```bash
-sudo apt install goldendict
-# goldendict libeb16 libqt5help5 libqt5positioning5 libqt5printsupport5 libqt5qml5 libqt5quick5 libqt5sensors5 libqt5sql5 libqt5sql5-sqlite libqt5webchannel5 libqt5webkit5 libqt5x11extras5 libqt5xml5
-```
+   字典软件, 可本地字典和线上程序等.
 
-设置Google Translate. 参考[GoogleTranslate](file://home/sun/File/Programs/Python/GoogleTranslate/)
+   ```bash
+   sudo apt install goldendict
+   # goldendict libeb16 libqt5help5 libqt5positioning5    libqt5printsupport5 libqt5qml5 libqt5quick5 libqt5sensors5    libqt5sql5 libqt5sql5-sqlite libqt5webchannel5    libqt5webkit5 libqt5x11extras5 libqt5xml5
+   ```
+
+   设置Google Translate. 参考[GoogleTranslate](file://home/sun/   File/Programs/Python/GoogleTranslate/)
 
 9. vlc
 
-```bash
-sudo apt install vlc
-# libaribb24-0 libbasicusageenvironment1 libcddb2 libdc1394-22 libdca0 libdvbpsi10 libebml4v5 libfaad2 libgroupsock8 libkate1 liblirc-client0 liblivemedia62 liblua5.2-0 libmad0 libmatroska6v5 libmicrodns0 libmpcdec6 libnfs11 libopenmpt-modplug1 libplacebo4 libprotobuf-lite10 libproxy-tools libresid-builder0c2a libsdl-image1.2 libsdl1.2debian libsidplay2 libsndio6.1 libssh2-1 libupnp6 libusageenvironment3 libvlc-bin libvlc5 libvlccore9 libvulkan1 vlc vlc-bin vlc-data vlc-l10n vlc-plugin-base vlc-plugin-notify vlc-plugin-qt vlc-plugin-samba vlc-plugin-skins2 vlc-plugin-video-output vlc-plugin-video-splitter vlc-plugin-visualization
-```
+   ```bash
+   sudo apt install vlc
+   # libaribb24-0 libbasicusageenvironment1 libcddb2 libdc1394-22 libdca0 libdvbpsi10 libebml4v5 libfaad2 libgroupsock8 libkate1 liblirc-client0 liblivemedia62 liblua5.2-0 libmad0 libmatroska6v5 libmicrodns0 libmpcdec6 libnfs11 libopenmpt-modplug1 libplacebo4 libprotobuf-lite10 libproxy-tools libresid-builder0c2a libsdl-image1.2 libsdl1.2debian libsidplay2 libsndio6.1 libssh2-1 libupnp6 libusageenvironment3 libvlc-bin libvlc5 libvlccore9 libvulkan1 vlc vlc-bin vlc-data vlc-l10n vlc-plugin-base vlc-plugin-notify vlc-plugin-qt vlc-plugin-samba vlc-plugin-skins2 vlc-plugin-video-output vlc-plugin-video-splitter vlc-plugin-visualization
+   ```
 
 10. teamviewer
 
-Teamviewer Download : [Teamviewer](https://www.teamviewer.com/en-us/download/linux/)
+    Teamviewer Download : [Teamviewer](https://www.teamviewer.com/en-us/download/linux/)
 
-```bash
-sudo dpkg -i xx.deb
-# qml-module-qtgraphicaleffects qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtquick-layouts qml-module-qtquick-privatewidgets qml-module-qtquick-window2 qml-module-qtquick2
-```
+    ```bash
+    sudo dpkg -i xx.deb
+    # qml-module-qtgraphicaleffects qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtquick-layouts qml-module-qtquick-privatewidgets qml-module-qtquick-window2 qml-module-qtquick2
+    ```
 
 11. lsb
 
-Required by Synopsys SCL
+    Required by Synopsys SCL
 
-```bash
-sudo apt install lsb
-# alien at autoconf automake autopoint autotools-dev build-essential debhelper debugedit dh-autoreconf dh-strip-nondeterminism   dpkg-dev fakeroot g++ g++-7 gcc gcc-7 guile-2.0-libs libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl  libarchive-cpio-perl libasan4 libatomic1 libc-dev-bin libc6-dev libcilkrts5 libfakeroot libfile-stripnondeterminism-perl libgc1c2 libgcc-7-dev libgsasl7 libitm1 libjpeg62 libkyotocabinet16v5 liblsan0 libltdl-dev liblua5.2-0 libmail-sendmail-perl libmailutils5 libmpx2 libmysqlclient20 libntlm0 libquadmath0 librpm8 librpmbuild8 librpmio8 librpmsign8 libsigsegv2 libstdc++-7-dev libsys-hostname-long-perl libtool libtsan0 libubsan0 linux-libc-dev lsb lsb-core lsb-invalid-mta lsb-printing lsb-security m4 mailutils mailutils-common make manpages-dev mysql-common ncurses-term pax po-debconf rpm rpm-common rpm2cpio rsync time
-```
+    ```bash
+    sudo apt install lsb
+    # alien at autoconf automake autopoint autotools-dev build-essential debhelper debugedit dh-autoreconf dh-strip-nondeterminism   dpkg-dev fakeroot g++ g++-7 gcc gcc-7 guile-2.0-libs libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl  libarchive-cpio-perl libasan4 libatomic1 libc-dev-bin libc6-dev libcilkrts5 libfakeroot libfile-stripnondeterminism-perl libgc1c2 libgcc-7-dev libgsasl7 libitm1 libjpeg62 libkyotocabinet16v5 liblsan0 libltdl-dev liblua5.2-0 libmail-sendmail-perl libmailutils5 libmpx2 libmysqlclient20 libntlm0 libquadmath0 librpm8 librpmbuild8 librpmio8 librpmsign8 libsigsegv2 libstdc++-7-dev libsys-hostname-long-perl libtool libtsan0 libubsan0 linux-libc-dev lsb lsb-core lsb-invalid-mta lsb-printing lsb-security m4 mailutils mailutils-common make manpages-dev mysql-common ncurses-term pax po-debconf rpm rpm-common rpm2cpio rsync time
+    ```
+
+12. fastboot
+
+    For android
+
+    ```bash
+    sudo apt install fastboot
+    # adb android-libadb android-libbacktrace android-libbase  android-libboringssl android-libcrypto-utils android-libcutils android-libetc1 android-libf2fs-utils android-liblog android-libsparse android-libunwind android-libutils android-libziparchive android-sdk-platform-tools android-sdk-platform-tools-common dmtracedump etc1tool f2fs-tools fastboot graphviz hprof-conv libann0 libcdt5 libcgraph6 libf2fs-format4 libf2fs5 libgts-0.7-5 libgts-bin libgvc6 libgvpr2 liblab-gamut1 libpathplan4 p7zip p7zip-full sqlite3
+    ```
+
+13. gimp
+
+    ```bash
+    sudo add-apt-repository ppa:otto-kesselgulasch/gimp
+    sudo apt-get update
+    sudo apt install gimp
+    # gimp gimp-data libamd2 libbabl-0.1-0 libblas3 libcamd2 libccolamd2 libcholmod3 libcolamd2 libde265-0 libexiv2-14 libgegl-0.4-0 libgegl-common  libgexiv2-2 libgfortran4 libgimp2.0 libheif1 liblapack3 libmetis5 libmng2 libmypaint-1.3-0 libmypaint-common libsuitesparseconfig5 libumfpack5
+    ```
+
+14. Krita `[Give up]`
+
+    ```bash
+    sudo add-apt-repository ppa:kritalime/ppa
+    sudo apt-get update
+    sudo apt install krita
+    # krita krita-data kwayland-data kwayland-integration libfam0 libgif7 libgsl23  libgslcblas0 libkf5archive5 libkf5completion-data libkf5completion5 libkf5config-bin libkf5config-data libkf5configcore5 libkf5configgui5  libkf5coreaddons-data libkf5coreaddons5 libkf5crash5 libkf5guiaddons5 libkf5i18n-data libkf5i18n5 libkf5idletime5 libkf5itemviews-data libkf5itemviews5 libkf5waylandclient5 libkf5widgetsaddons-data libkf5widgetsaddons5 libkf5windowsystem-data libkf5windowsystem5 libopencolorio1v5 libpoppler-qt5-1 libqt5concurrent5 libqt5designer5 libqt5multimedia5 libqt5quickwidgets5 libqt5script5 libqt5test5 libqt5waylandclient5 libqt5waylandcompositor5 libquazip5-1 libtinyxml2.6.2v5 python3-pyqt5 python3-sip qtwayland5
+    sudo apt install krita-nautilus-thumbnailer
+    # krita-nautilus-thumbnailer xcftools
+    ```
+
+15. inkscape
+
+    ```bash
+    sudo add-apt-repository ppa:inkscape.dev/trunk
+    sudo apt update
+    sudo apt install inkscape
+    # fonts-lato inkscape-trunk inkscape-trunk-data javascript-common libatkmm-1.6-1v5 libcairomm-1.0-1v5 libcdr-0.1-1 libgdl-3-5 libgdl-3-common libglibmm-2.4-1v5 libgtkmm-3.0-1v5 libgtkspell3-3-0 libimage-magick-perl libimage-magick-q16-perl libjs-jquery libmagick++-6.q16-7 libpangomm-1.4-1v5  libpotrace0 libpython-stdlib librevenge-0.0-0 libruby2.5 libsigc++-2.0-0v5 libvisio-0.1-1 libwmf-bin libwpd-0.10-10 libwpg-0.3-3 perlmagick python  python-bs4 python-chardet python-html5lib python-lxml python-minimal python-numpy python-pkg-resources python-scour python-six python-webencodings python2.7 python2.7-minimal python3-scour rake ruby ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert ruby-test-unit ruby2.5 rubygems-integration scour
+    ```
+
+16. open-jdk
+
+    ```bash
+    sudo apt install openjdk-11-jdk
+    # ca-certificates-java fonts-dejavu-extra java-common libatk-wrapper-java libatk-wrapper-java-jni libgif7 libice-dev libpthread-stubs0-dev libsm-dev libx11-dev libx11-doc libxau-dev libxcb1-dev libxdmcp-dev libxt-dev openjdk-11-jdk openjdk-11-jdk-headless openjdk-11-jre openjdk-11-jre-headless x11proto-core-dev x11proto-dev xorg-sgml-doctools xtrans-dev
+    ```
+
+17. sbt
+
+    ```bash
+    echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
+    sudo apt-get update
+    sudo apt-get install sbt
+    ```
 
 ### 2. Setup
 
 1. Key Binding
 
-| Behavior | Key   |
-|:--------:|:-----:|
+   | Behavior | Key   |
+   |:--------:|:-----:|
 
+2. Fonts <span id="fonts"></span>
 
-2. Fonts </span id='fonts'></span>
+    - WPS Fonts
+    - Windows Fonts
+    - Adobe Fonts
 
-- WPS Fonts
-- Windows Fonts
-- Adobe Fonts
-
-```bash
-mkfontsdir
-mkfontscale
-sudo fc-cache -fv
-```
+    ```bash
+    mkfontsdir
+    mkfontscale
+    sudo fc-cache -fv
+    ```
 
 3. fstab setup
 
-Reference the backup fstab file.
+    Reference the backup fstab file.
 
-Use `blkid` to get UUID
+    Use `blkid` to get UUID
 
-```bash
-#Mount Disks
-UUID=ec6847c4-0611-4cde-bc59-bd6222383d63 /home/sun/File   ext4 defaults 0 0
-UUID=78878620-0fd9-42df-91da-9fa79c708fa0 /home/SoftwareI  ext4 defaults 0 0
-UUID=aa3a6180-d95a-4bb1-999d-8afaaa018d1a /home/SoftwareII ext4 defaults 0 0
-```
+    ```bash
+    #Mount Disks
+    UUID=ec6847c4-0611-4cde-bc59-bd6222383d63 /home/sun/File ext4 defaults 0 0
+    UUID=78878620-0fd9-42df-91da-9fa79c708fa0 /home/SoftwareI ext4 defaults 0 0
+    UUID=aa3a6180-d95a-4bb1-999d-8afaaa018d1a /home/SoftwareII ext4 defaults 0 0
+    ```
 
 ## Problem
 
 1. Android Studio -- Failed to load module "canberra-gtk-module"
 
-```bash
-sudo apt install libcanberra-gtk-module
-#  libcanberra-gtk-module libcanberra-gtk0
-```
+   ```bash
+   sudo apt install libcanberra-gtk-module
+   #  libcanberra-gtk-module libcanberra-gtk0
+   ```
 
-2.  add-apt-repository: command not found
+2. add-apt-repository: command not found
 
-```bash
-sudo apt install software-properties-common
-# python3-software-properties software-properties-common unattended-upgrades
-```
+   ```bash
+   sudo apt install software-properties-common
+   # python3-software-properties software-properties-common unattended-upgrades
+   ```
 
 3. Teamviewer Top bar icons
 
-```bash
-cd /usr/share/icons/
-sudo mv ./Papirus/22x22/apps/TeamViewer.svg ./Papirus/22x22/apps/TeamViewer.svg.old
-sudo cp ./Papirus/24x24/panel/teamviewer-indicator.svg ./Papirus/22x22/apps/TeamViewer.svg
-```
+   ```bash
+   cd /usr/share/icons/
+   sudo mv ./Papirus/22x22/apps/TeamViewer.svg ./Papirus/22x22/apps/TeamViewer.svg.old
+   sudo cp ./Papirus/24x24/panel/teamviewer-indicator.svg ./Papirus/22x22/apps/TeamViewer.svg
+   ```
+
+4. Open Terminal Here Doesn't Work
+
+   Open Terminal Here only open Gnome-Terminal at /home/user directory.
+
+   **Solution:**
+
+   关闭`Run a custom command instead of my shell` in Gnome-Terminal
+
+   `gnome-terminal: Preferences -> Commnad`
+
+   设置zsh为myshell可以通过以下方案：
+
+   ```bash
+   chsh -s `which zsh`
+   # chsh -s /user/bin/zsh
+   reboot
+   ```
+
+   参考[[1]]("#rf1")<span id="rrf1"></span>
 
 ## Reference
 
+<span id="rf1"></span> [[1]]("#rrf1") ubuntu 14.04下配置terminal为zsh默认环境 [OL], [https://blog.csdn.net/zxgdll/article/details/70858857](https://blog.csdn.net/zxgdll/article/details/70858857)
+
 ## Update
 
-
+1. 2019.10.05: Modified the style and error in markdown
