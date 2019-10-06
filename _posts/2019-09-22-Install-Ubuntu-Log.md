@@ -129,6 +129,8 @@ sudo apt install chrome-gnome-shell
 - KStatusNotifierItem/AppIndicator Support: [KStatusNotifierItem/AppIndicator Support](https://extensions.gnome.org/extension/615/appindicator-support/)
 - Workspace Indicator: [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
 
+对于其状态栏目的位置，可以通过修改其中的`addToStatusArea`的参数来修改。
+
 ### 5. 输入法
 
 使用ibus-rime输入法。
@@ -402,6 +404,13 @@ sudo apt install geary
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
     sudo apt-get update
     sudo apt-get install sbt
+    ```
+
+18. subtitleeditor
+
+    ```bash
+    sudo apt install subtitleeditor
+    # libgstreamermm-1.0-1 libsubtitleeditor0 libxml++2.6-2v5 subtitleeditor
     ```
 
 ### 2. Setup

@@ -2,7 +2,7 @@
 layout: post
 title: Ibus Compile and Setup
 date: 2019-08-05 23:44
-category: Skill
+category: Skills
 author: Sunic
 tags: ['Ibus Compile', 'Input Method', 'ibus rime', 'fcitx5']
 summary: 

@@ -2,7 +2,7 @@
 layout:     post
 title:      Markdown Usage for Jekyll
 date:       2019-07-06 09:32 +0800
-categories: Skill
+categories: Skills
 author:     Sunic 
 tags:       Study Markdown Jekyll
 summary:    In this blog, some of usage of markdown for jekyll are introduced.
