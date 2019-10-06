@@ -2,10 +2,10 @@
 layout: post
 title: TVM -- TVM and Others.
 date: 2019-07-08 23:56
-categories: TVM
+categories: 'Deep Learning'
 author: Sunic
-tags: ['Deep learning Compiler', TVM, TensorFlow XLA, nGraph, DLVM ]
-summary: 
+tags: [TVM, 'TensorFlow XLA', nGraph, DLVM ]
+summary: Overview of DL Compilers
 ---
 
 需要用到深度学习编译框架来适配设计的学习加速器后端，学习了TVM、XLA、nGraph、DLVM等相关的工具，在这里对其作简单的介绍。

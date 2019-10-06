@@ -2,9 +2,9 @@
 layout: post
 title: TVM学习(1)--搭建环境
 date: 2019-08-02 10:31
-category: TVM
+category: 'Deep Learning'
 author: Sunic
-tags: ['TVM', '环境搭建']  
+tags: ['TVM']  
 summary: 搭建TVM环境
 ---
 

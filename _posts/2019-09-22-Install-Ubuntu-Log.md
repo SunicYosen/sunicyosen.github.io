@@ -413,6 +413,11 @@ sudo apt install geary
     # libgstreamermm-1.0-1 libsubtitleeditor0 libxml++2.6-2v5 subtitleeditor
     ```
 
+19. Netron
+
+    网络模型可视化的工具。
+    Download From [Github](https://github.com/lutzroeder/netron)
+
 ### 2. Setup
 
 1. Key Binding
