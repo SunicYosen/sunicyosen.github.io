@@ -257,7 +257,7 @@ summary: 搭建TVM环境
 
       `cxx_flags += -fPIC`
 
-      </span id="rrf2"></span>
+      <span id="rrf2"></span>
       `-fPIC`: The `f` is the gcc prefix for options that "control the interface conventions used in code generation". The `PIC` stands for "Position Independent Code", it is a specialization of the fpic for m68K and SPARC.[[2]](#rf2)
 
       然后，通过make编译即可。
