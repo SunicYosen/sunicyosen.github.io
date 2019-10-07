@@ -139,6 +139,9 @@ sudo apt install chrome-gnome-shell
 sudo apt install ibus ibus-gtk2 ibus-gtk3
 sudo apt install ibus-rime
 #  ibus-rime:amd64 (1.2-1build2), libgoogle-glog0v5:amd64 (0.3.5-1, automatic), libmarisa0:amd64 (0.2.4-8build12, automatic), librime-data-luna-pinyin:amd64 (0.35-1, automatic), librime-data-cangjie5:amd64 (0.35-1, automatic), libopencc2:amd64 (1.0.4-5, automatic), libopencc2-data:amd64 (1.0.4-5, automatic), librime-bin:amd64 (1.2.9+dfsg2-1, automatic), libboost-regex1.65.1:amd64 (1.65.1+dfsg-0ubuntu5, automatic), librime1:amd64 (1.2.9+dfsg2-1, automatic), libleveldb1v5:amd64 (1.20-2, automatic), librime-data:amd64 (0.35-1, automatic), libboost-filesystem1.65.1:amd64 (1.65.1+dfsg-0ubuntu5, automatic), libyaml-cpp0.5v5:amd64 (0.5.2-4ubuntu1, automatic), libgflags2.2:amd64 (2.2.1-1, automatic)
+
+sudo apt install ibus-qt4
+# ibus-qt4 libaudio2 libibus-qt1 libqt4-dbus libqt4-declarative libqt4-network libqt4-script libqt4-sql libqt4-sql-mysql libqt4-xml libqt4-xmlpatterns libqtcore4 libqtdbus4 libqtgui4 qdbus qt-at-spi qtcore4-l10n
 ```
 
 可配之为小鹤双拼。
@@ -462,6 +465,14 @@ sudo apt install geary
    ```bash
    sudo apt install libcanberra-gtk-module
    #  libcanberra-gtk-module libcanberra-gtk0
+   ```
+
+   Matlab 安装后，仍同样有这样的问题，解决办法：
+
+   ```bash
+   locale libcanberra-gtk-module.so
+   sudo ln -s /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so /usr/lib/libcanberra-gtk-module.so
+   # 因为linux默认库是从/usr/lib或者/usr/lib64下找，这时候只需要建立一个软连接就行了
    ```
 
 2. add-apt-repository: command not found
