@@ -66,7 +66,7 @@ import numpy as np
 
     这里我们选择了一张小猫图片，如下图：
 
-    ![Example Cat](/img/2019-08-04-TVM-Study-2-Start-with-example/cat.png){:.center-image .eighty-percent-image)
+    ![Example Cat](/img/2019-08-04-TVM-Study-2-Start-with-example/cat.png){: .center-image}
 
     输入图片的获取和处理程序如下：
 
@@ -193,11 +193,11 @@ print('TVM prediction top-1:', top1, synset[top1])
 
 TVM结果：
 
-![TVM Result](/img/2019-08-04-TVM-Study-2-Start-with-example/result_tvm.png){:.center-image .eighty-percent-image)
+![TVM Result](/img/2019-08-04-TVM-Study-2-Start-with-example/result_tvm.png){: .center-image}
 
 MXNet原始结果：
 
-![TVM Result](/img/2019-08-04-TVM-Study-2-Start-with-example/result_mxnet.png){:.center-image .eighty-percent-image)
+![TVM Result](/img/2019-08-04-TVM-Study-2-Start-with-example/result_mxnet.png){: .center-image}
 
 可见其结果一致，但时间上差距不大，可能由于网络较为简单，不具有代表性。
 
