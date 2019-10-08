@@ -425,13 +425,12 @@ sudo apt install geary
 
 1. Key Binding
 
-   | Behavior | Key   |
-   |:--------:|:-----:|
-   |Switch to workspace 1|Alt+1|
-   |Switch to workspace 2|Alt+2|
-   |Switch to workspace 3|Alt+3|
-   |Switch to workspace 4|Alt+4|
-   |Copy a screenshot of an area to clipboard| Print|
+   | Behavior                                | Key                 |
+   |:----------------------------------------|:-------------------:|
+   |Switch to workspace 1/2/3/4              |Alt + 1/2/3/4        |
+   |Move window to workspace 1/2/3/4         |Alt + Super + 1/2/3/4|
+   |Copy a screenshot of an area to clipboard|Print                |
+   |Save a screenshot of an area to Pictures |Shift+Print          |
 
 2. Fonts <span id="fonts"></span>
 
