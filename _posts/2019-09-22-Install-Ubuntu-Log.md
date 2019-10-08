@@ -509,9 +509,25 @@ sudo apt install geary
 
    参考[[1]](#rf1)<span id="rrf1"></span>
 
+5. ibus-qt4 Doesn't work. As WPS
+
+   Use `qt4-qtconfig`
+
+   首先安装：
+
+   ```bash
+   sudo apt install qt4-qtconfig
+   ```
+
+   在Interface标签下设置，可以在默认输入法选择XIM,后续选定ibus,也没有问题。
+
+   ***Reference***: [[2]](#rf2). <span id="rrf2"></span>
+
 ## Reference
 
 <span id="rf1"></span> [[1]](#rrf1) ubuntu 14.04下配置terminal为zsh默认环境 [OL], [https://blog.csdn.net/zxgdll/article/details/70858857](https://blog.csdn.net/zxgdll/article/details/70858857)
+
+<span id="rf2"></span> [[2]](#rrf2) Qt 下 ibus 托盘跟随问题, [OL], [https://blog.argcv.com/articles/2632.c](https://blog.argcv.com/articles/2632.c)
 
 ## Update
 
