@@ -523,11 +523,41 @@ sudo apt install geary
 
    ***Reference***: [[2]](#rf2). <span id="rrf2"></span>
 
+6. Hspice compile with `.hdl` Error.
+
+    Simulator的仿真报错如下：
+
+    ```markdown
+    In file included from <stdin>:16:0:
+    /usr/include/stdio.h:27:36: fatal error: bits/libc-header-start.h: No such file or directory
+    #include <bits/libc-header-start.h>
+    ```
+
+    **解决方案：** ***Reference***: [[3]](#rf3). <span id="rrf3"></span>
+
+    ```bash
+    #   gcc-7-multilib gcc-multilib lib32asan4 lib32atomic1 lib32cilkrts5 lib32gcc-7-dev lib32gcc1 lib32gomp1 lib32itm1 lib32mpx2 lib32quadmath0 lib32stdc++6 lib32ubsan0 libc6-dev-i386 libc6-dev-x32 libc6-i386 libc6-x32 libx32asan4 libx32atomic1 libx32cilkrts5 libx32gcc-7-dev libx32gcc1 libx32gomp1 libx32itm1 libx32quadmath0 libx32stdc++6 libx32ubsan0
+    ```
+
+    之后会报：`cannot find crti.o: No such file or directory` 错误，
+
+    **解决方案：** ***Reference***: [[4]](#rf4). <span id="rrf4"></span>
+
+    ```bash
+    sudo ln -s /usr/lib/x86_64-linux-gnu /usr/lib64
+    # or add to .bashrc
+    export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH
+    ```
+
 ## Reference
 
 <span id="rf1"></span> [[1]](#rrf1) ubuntu 14.04下配置terminal为zsh默认环境 [OL], [https://blog.csdn.net/zxgdll/article/details/70858857](https://blog.csdn.net/zxgdll/article/details/70858857)
 
 <span id="rf2"></span> [[2]](#rrf2) Qt 下 ibus 托盘跟随问题, [OL], [https://blog.argcv.com/articles/2632.c](https://blog.argcv.com/articles/2632.c)
+
+<span id="rf3"></span> [[3]](#rrf3) “fatal error: bits/libc-header-start.h: No such file or directory” while compiling HTK, [OL], [https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili](https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili)
+
+<span id="rf4"></span> [[4]](#rrf4) Compiling problems: cannot find crt1.o, [OL], [https://stackoverflow.com/questions/6329887/compiling-problems-cannot-find-crt1-o](https://stackoverflow.com/questions/6329887/compiling-problems-cannot-find-crt1-o)
 
 ## Update
 
