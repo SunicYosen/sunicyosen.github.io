@@ -487,3 +487,5 @@ sudo apt install geary
 ## Update
 
 1. 2019.10.05: Modified the style and error in markdown
+
+2. 2019.10.24: Separate Errors & Solutions to another posts
