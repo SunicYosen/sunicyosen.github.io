@@ -8,6 +8,8 @@ tags: [errors, logs]
 summary: 记录使用软件中的错误信息和解决方案
 ---
 
+记录使用软件中的错误信息和解决方案.
+
 ## Usual Softwares and Problems
 
 0. add-apt-repository: command not found
