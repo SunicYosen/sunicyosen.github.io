@@ -270,7 +270,7 @@ sudo apt install geary
 
    ```bash
    export QTHOME=/home/SoftwareI/Qt
-   export QTDIR=$QTHOME/5.13.1/gcc_64
+   export QTDIR=$QTHOME/xxx/gcc_64
    export QT_WEBKIT=true
    export MYPATH=$MYPATH:$QTHOME/Tools/QtCreator/bin
    export MYPATH=$MYPATH:$QTDIR/bin
@@ -278,6 +278,7 @@ sudo apt install geary
    export QT_PLUGIN_PATH=$QTDIR/plugins/
    export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
    export LD_LIBRARY_PATH=$QT_PLUGIN_PATH/   platforms:$LD_LIBRARY_PATH
+   export QT_SELECT=xxx
    ```
 
    可以使用qtchooser:
@@ -442,6 +443,15 @@ sudo apt install geary
     ```bash
     sudo apt install putty
     # putty-tools
+    ```
+
+23. 32-bit libraries (uninstall)
+
+    ```bash
+    sudo apt install libxext6:i386
+    # gcc-8-base:i386 libbsd0:i386 libc6:i386 libgcc1:i386 libx11-6:i386 libxau6:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386
+    sudo apt install libxft2:i386
+    # libexpat1:i386 libfontconfig1:i386 libfreetype6:i386 libpng16-16:i386 libxft2:i386 libxrender1:i386 zlib1g:i386
     ```
 
 ### 2. Setup
