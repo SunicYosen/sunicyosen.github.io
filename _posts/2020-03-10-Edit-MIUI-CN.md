@@ -1,14 +1,12 @@
 ---
 layout: post
-title: Edit MIUI11 CN 
+title: MIUI国内版精简
 date: 2019-10-27 15:12
 category: Skills
 author: Sun
 tags: [Miui11 Android boot cust]
 summary: 
 ---
-
-# MIUI国内版精简
 
 基于官方MIUI V11.0.2 for mido. `mido_images_V11.0.2.0.NCFCNXM_20191107.0000.00_7.0_cn`
 精简。
@@ -262,7 +260,7 @@ dex2oat --dex-file=/sdcard/services.dex --oat-file=/sdcard/services.odex  --inst
 - --instruction-set 指定cpu架构
 - --runtime-arg 指定dex2oat运行时的参数，如果编译时发生内存不足，可以把Xms和Xmx调大
 
-## 系统精简
+## 4. 系统精简
 
 各个应用的用途参考https://52huameng.com/teach/1557， 由于对services.jar进行了修改，不会卡米。
 
@@ -271,10 +269,10 @@ adb shell
 cd /system/app
 rm AnalyticsCore/ BookmarkProvider/ FM/ GameCenter/ HTMLViewer/ Health/ MSA/ MiDrive/ MiLinkService2/ MiRadio/ MiuiBug Report/ MiuiDaemon/ MiuiDriveMode/ MiuiSuperMarket/ PrintSpooler/  SogouInput/ Stk/ TouchAssistant/ Userguide VipAccount/ VoiceAssist/ VirtualSim/ XMPass/ greenguard/ mab/ -rf
 cd /system/priv-app/
-rm Backup BackupRestoreConfirmation/ Browser/ CallLogBackup/ CellBroadcastReceiver/ DownloadProviderUi/ Emergency Info/ MiGameCenterSDKService/ MiVRFramework/ MiuiVideo/ Music NewHome/  PicoTts/  Velvet/ -r
+rm Backup BackupRestoreConfirmation/ Browser/ CallLogBackup/ CellBroadcastReceiver/ DownloadProviderUi/ Emergency Info/ MiGameCenterSDKService/ MiVRFramework/ MiuiVideo/ Music NewHome/  PicoTts/  QuickSearchBox/ Velvet/ -r
 ```
 
-## cust添加多国家
+## 5. cust添加多国家
 
 将global的cust/cust复制进cust分区。
 
@@ -292,7 +290,7 @@ mv /cust/cust_global/* /cust/cust/
 rm cust_variant
 ```
 
-## GAPPS
+## 6. Google Services
 
 TWRP recovery 刷入 GAPPS， 这样刷入开机出现了google验证黑屏，在这里我将Global版本的google服务复制进入/system/,能用，没有开机验证。
 
