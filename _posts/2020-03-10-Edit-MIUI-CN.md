@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MIUI国内版精简
-date: 2019-10-27 15:12
+date: 2020-03-10 15:12
 category: Skills
 author: Sun
 tags: [Miui11 Android boot cust]
