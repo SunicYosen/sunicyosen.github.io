@@ -61,6 +61,20 @@ summary: 记录使用软件中的错误信息和解决方案
 
    ***Reference***: [[0]](#rf0). <span id="rrf0"></span>
 
+4. ibus rime 横向
+
+参考[Github Issue](https://github.com/rime/ibus-rime/issues/52)
+
+创建空白文件: `~/.config/ibus/rime/build/ibus_rime.yaml`
+
+向`ibus_rime.yaml`写入并保存以下内容:
+
+```yaml
+style:
+   horizontal: true
+```
+
+重新部署
 
 ## Professional Softwares and Problems
 
