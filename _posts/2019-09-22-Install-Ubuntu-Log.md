@@ -222,7 +222,7 @@ sudo apt install git
 cp File/Temp/.gitconfig ~/
 ```
 
-### 10. geary
+### 10. geary [弃用]
 
 ```bash
 sudo add-apt-repository ppa:geary-team/releases
@@ -232,6 +232,20 @@ sudo apt install geary
 ```
 
 可以使用gnome的gnome-account登录Outlook和Gmail.
+
+### 11. Thunderbird
+
+配合 [birdtray](https://github.com/gyunaev/birdtray) 使用。
+
+```bash
+sudo apt install libx11-xcb-dev libgl-dev
+mkdir build
+cd build
+cmake ..
+make -j4
+mv birdtray /home/SoftwareI/bin
+# birdtray autostart .desktop
+```
 
 ## Use Log
 
