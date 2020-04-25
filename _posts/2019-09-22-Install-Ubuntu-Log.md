@@ -233,7 +233,7 @@ sudo apt install geary
 
 可以使用gnome的gnome-account登录Outlook和Gmail.
 
-### 11. Thunderbird
+### 11. Thunderbird 
 
 配合 [birdtray](https://github.com/gyunaev/birdtray) 使用。
 
