@@ -468,6 +468,15 @@ mv birdtray /home/SoftwareI/bin
     # libexpat1:i386 libfontconfig1:i386 libfreetype6:i386 libpng16-16:i386 libxft2:i386 libxrender1:i386 zlib1g:i386
     ```
 
+24. fcitx5(Ubuntu20.04)
+
+```bash
+sudo apt install fcitx5
+# fcitx5-data fcitx5-module-dbus fcitx5-module-ibus fcitx5-module-kimpanel fcitx5-module-quickphrase fcitx5-module-wayland fcitx5-module-xorg   fcitx5-modules libfcitx5config5 libfcitx5core5 libfcitx5utils1 libxcb-ewmh2 libxcb-imdkit0
+sudo apt installl fcitx5-chinese-addons
+# fcitx5-chinese-addons fcitx5-chinese-addons-bin   fcitx5-chinese-addons-data fcitx5-module-chttrans   fcitx5-module-cloudpinyin fcitx5-module-fullwidth   fcitx5-module-pinyinhelper fcitx5-module-punctuation fcitx5-pinyin   fcitx5-table libboost-iostreams1.71.0 libfcitx5-qt-data libfcitx5-qt1   libime-data libimecore0 libimepinyin0 libimetable0 libminizip1   libqt5quickwidgets5 libqt5webengine-data libqt5webenginecore5 libqt5webenginewidgets5 libre2-5
+```
+
 ### 2. Setup
 
 1. Key Binding
