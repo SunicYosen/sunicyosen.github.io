@@ -215,7 +215,7 @@ to:
 
 ### 3.3 编译打包
 
-- 方法1:
+- 方法1:(可用）
 
 用 smali 将 .smali 转换成 dex:
 
@@ -272,6 +272,8 @@ cd /system/priv-app/
 rm Backup BackupRestoreConfirmation/ Browser/ CallLogBackup/ CellBroadcastReceiver/ DownloadProviderUi/ Emergency Info/ MiGameCenterSDKService/ MiVRFramework/ MiuiVideo/ Music NewHome/  PicoTts/  QuickSearchBox/ Velvet/ -r
 ```
 
+具体可以参考(`miui_simple.sh`)[https://gist.github.com/SunicYosen/2e8f5dbe1d55a9b49a5864855a808fff]脚本.
+
 ## 5. cust添加多国家
 
 将global的cust/cust复制进cust分区。
@@ -292,10 +294,20 @@ rm cust_variant
 
 ## 6. Google Services
 
-TWRP recovery 刷入 GAPPS， 这样刷入开机出现了google验证黑屏，在这里我将Global版本的google服务复制进入/system/,能用，没有开机验证。
+TWRP recovery 刷入 GAPPS， 这样刷入开机出现了google验证黑屏，这是由于刷机覆盖了WebViewGoogle, 可以将其解包，修改`install.sh`，在`removal_bypass_list`添加WebViewGoogle，如下：
+
+```bash
+# List of GApps files that should NOT be automatically removed as they are also included in (many) ROMs
+removal_bypass_list="
+WebViewGoogle
+";
+```
+
+同时也可以将Global版本的google服务复制进入/system/,能用，没有开机验证。
 
 ## Reference
 
 [1] boot.img的修改, https://www.cnblogs.com/goodhacker/p/4106139.html
 [2] Android Deodex https://www.dazhuanlan.com/2019/10/23/5db064015fc73/
 [3] Android odex,oat文件的反编译，回编译 https://www.cnblogs.com/luoyesiqiu/p/11802947.html
+[4] 解决小米6 官方MIUI 10.3.1.0 Open GApps 打开 Google Play 或添加谷歌账号时黑屏 https://www.cnroms.com/sagit-miui-opengapps-login-failed-black-screen.html 
