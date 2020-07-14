@@ -406,6 +406,8 @@ mv birdtray /home/SoftwareI/bin
     sudo apt update
     sudo apt install inkscape
     # fonts-lato inkscape-trunk inkscape-trunk-data javascript-common libatkmm-1.6-1v5 libcairomm-1.0-1v5 libcdr-0.1-1 libgdl-3-5 libgdl-3-common libglibmm-2.4-1v5 libgtkmm-3.0-1v5 libgtkspell3-3-0 libimage-magick-perl libimage-magick-q16-perl libjs-jquery libmagick++-6.q16-7 libpangomm-1.4-1v5  libpotrace0 libpython-stdlib librevenge-0.0-0 libruby2.5 libsigc++-2.0-0v5 libvisio-0.1-1 libwmf-bin libwpd-0.10-10 libwpg-0.3-3 perlmagick python  python-bs4 python-chardet python-html5lib python-lxml python-minimal python-numpy python-pkg-resources python-scour python-six python-webencodings python2.7 python2.7-minimal python3-scour rake ruby ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert ruby-test-unit ruby2.5 rubygems-integration scour
+    # 1.0
+    # gsfonts imagemagick imagemagick-6-common imagemagick-6.q16 inkscape   libcdr-0.1-1 libgdl-3-5 libgdl-3-common libgsl23 libgslcblas0  libgtkspell3-3-0 libimage-magick-perl libimage-magick-q16-perl liblqr-1-0   libmagick++-6.q16-8 libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra  libmagickwand-6.q16-6 libnetpbm10 libpotrace0 librevenge-0.0-0   libvisio-0.1-1 libwmf-bin libwpd-0.10-10 libwpg-0.3-3 netpbm perlmagick  python3-bs4 python3-html5lib python3-lxml python3-numpy python3-scour   python3-soupsieve python3-webencodings
     ```
 
 16. open-jdk
