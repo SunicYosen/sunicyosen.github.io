@@ -34,7 +34,7 @@ summary:
     - Location of Files on Tablet:
         - Base Folder: `/home/sun/File/Paper/zotfile`
         - Subfolder: `Create subfolders from zotero collections`
-        - Use additional subfolders defined by: \/\%c\/\%y
+        - Use additional subfolders defined by: `/%c/%y`
         - Additional Options:
             - Rename files when they ... `[T]`
             - Save copy of annotated file ... `[F]`
@@ -43,8 +43,8 @@ summary:
 - Renaming Rules
     - Renaming Format:
         - Use zotero to rename `[F]`
-        - Format for all Item Types except Patents: \{\%a_\}\{\%y_\}\{\%t\}
-        - Format for Patents:  \{\%a_\}\{\%y_\}\{\%t\}
+        - Format for all Item Types except Patents: \{%a_\}\{%y_\}\{%t\}
+        - Format for Patents:  \{%a_\}\{%y_\}\{%t\}
 
     - Additional Settings:
         - Delimiter between multiple authors: `_`
