@@ -2,7 +2,7 @@
 layout: post
 title: TVM -- TVM and Others.
 date: 2019-07-08 23:56
-categories: 'Deep Learning'
+category: 'Deep Learning'
 author: Sunic
 tags: [TVM, 'TensorFlow XLA', nGraph, DLVM ]
 summary: Overview of DL Compilers
