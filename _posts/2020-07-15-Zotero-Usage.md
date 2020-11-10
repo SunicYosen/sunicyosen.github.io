@@ -60,7 +60,18 @@ summary:
 
 [Github](https://github.com/beloglazov/zotero-scholar-citations). 安装即可使用。
 
+## PaperShip Zotero WebDAV验证 <span id="rrf1"></span>[[1]](#rf1)
+
+验证不成功时，Papership给出下面的提示：
+
+`cannot very server, please check your server credentials. got 404`
+
+假如Zotero的文件存储在坚果云的Zotero文件夹，即存储路径为`dav.jianguoyun/dav/zotero`，
+
+### 那么解决办法
+
+打开坚果云官网，登录坚果云账号，在zotero文件夹新建空白的lastsync.txt文件，务必注意的是，必须使用坚果云自带的新建文件工具来新建lastsync.txt文件，不能通过手动上传的方式。
 
 ## Reference
 
-<span id="rf1"></span> [[1]](#rrf1)  
+<span id="rf1"></span> [[1]](#rrf1) https://www.jianshu.com/p/880ab833a0ba 
