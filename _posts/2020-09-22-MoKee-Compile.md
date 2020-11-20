@@ -74,7 +74,11 @@ ota_all UNOFFICIAL dumpling
 
 ## Problems
 
-### 1. lunch 时可能报错：
+### 1. Can not locate config makefile for product "mk_cancro"
+
+
+
+### 2. lunch 时可能报错：
 
 ```
 destroy_build_var_cache:unset:5: var_cache_ 2ND_TARGET_GCC_VERSION ANDROID_BUILD_PATHS BUILD_OS LLVM_PREBUILTS_VERSION TARGET_ARCH TARGET_BUILD_VARIANT TARGET_DEVICE TARGET_GCC_VERSION TARGET_PLATFORM_VERSION TARGET_PRODUCT print report_config : invalid parameter name
