@@ -23,7 +23,7 @@ fastboot flash recovery twrp-3.3.1-0-mido.img
 
 由于MIUI带有启动保护，会验证system分区的情况，所以需要通过修改boot分区的来取消verify.
 
-需要的工具：split_bootimg.pl，mkbootimg，mkbootfs[1]
+需要的工具：split_bootimg.pl，mkbootimg，mkbootfs<span id="rrf1"></span> [[1]](#rf1)
 
 ### 1. 拆包boot.img
 
@@ -272,7 +272,7 @@ cd /system/priv-app/
 rm Backup BackupRestoreConfirmation/ Browser/ CallLogBackup/ CellBroadcastReceiver/ DownloadProviderUi/ Emergency Info/ MiGameCenterSDKService/ MiVRFramework/ MiuiVideo/ Music NewHome/  PicoTts/  QuickSearchBox/ Velvet/ -r
 ```
 
-具体可以参考(`miui_simple.sh`)[https://gist.github.com/SunicYosen/2e8f5dbe1d55a9b49a5864855a808fff]脚本.
+具体可以参考[`miui_simple.sh`](https://gist.github.com/SunicYosen/2e8f5dbe1d55a9b49a5864855a808fff)脚本.
 
 ## 5. cust添加多国家
 

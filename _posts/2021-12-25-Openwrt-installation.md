@@ -186,7 +186,7 @@ without-password` to `PermitRootLogin yes`
 
 ## Problems
 
-- Nginx代理luci时报错：`no rpc reply`
+- Nginx代理luci时报错：`No related RPC reply`
   - Status: `待解决`
 
 ## Reference
