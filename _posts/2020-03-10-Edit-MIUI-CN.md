@@ -294,7 +294,10 @@ rm cust_variant
 
 ## 6. Google Services
 
-TWRP recovery 刷入 GAPPS， 这样刷入开机出现了google验证黑屏，这是由于刷机覆盖了WebViewGoogle, 可以将其解包，修改`install.sh`，在`removal_bypass_list`添加WebViewGoogle，如下<span id="rrf4"></span>[[4]](#rf4).：
+TWRP recovery 刷入 GAPPS， 这样刷入开机出现了google验证黑
+屏，这是由于刷机覆盖了WebViewGoogle, 可以将其解包，修改
+`install.sh`，在`removal_bypass_list`添加WebViewGoogle，如下
+<span id="rrf4"></span>[[4]](#rf4).
 
 ```bash
 # List of GApps files that should NOT be automatically removed as they are also included in (many) ROMs
