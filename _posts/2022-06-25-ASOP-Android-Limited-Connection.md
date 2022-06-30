@@ -8,6 +8,8 @@ tags: [Android]
 summary:
 ---
 
+国外android系统会导致联网但显示limited connection,主要是验证服务器的问题。
+
 ## 解决方案
 
 使用 ADB 命令解决：
